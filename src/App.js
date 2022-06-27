@@ -1,3 +1,8 @@
+import ShowMenu from './component/showmenu/Showmenu';
 export default function App() {
-  return <div>App goes here</div>;
+  return (
+    <>
+      <ShowMenu />
+    </>
+  );
 }
