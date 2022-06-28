@@ -1,3 +1,9 @@
+import ShowMenus from './ShowMenus/ShowMenus.js';
+
 export default function App() {
-  return <div>App goes here</div>;
+  return (
+    <>
+      <ShowMenus />
+    </>
+  );
 }
