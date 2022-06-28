@@ -1,7 +1,9 @@
 import '@testing-library/jest-dom/extend-expect';
 
 import {render, screen} from '@testing-library/react';
+
 import menusdata from '../data.js';
+
 import ShowMenus from './ShowMenus.js';
 
 describe('ShowMenus', () => {
