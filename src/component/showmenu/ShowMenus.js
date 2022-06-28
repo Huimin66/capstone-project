@@ -1,8 +1,8 @@
 import {nanoid} from 'nanoid';
-import {useEffect, useState} from 'react';
+import {useState} from 'react';
 import styled from 'styled-components';
 
-export default function ShowMenu() {
+export default function ShowMenus() {
   const menusdata = [
     {
       id: nanoid(),
@@ -67,11 +67,8 @@ export default function ShowMenu() {
     },
   ];
 
-  const [menus, setmenus] = useState([]);
-
-  useEffect(() => {
-    setmenus(menusdata);
-  }, []);
+  /* eslint-disable-next-line */
+  const [menus, setmenus] = useState(menusdata);
 
   return (
     <MenuContainer>
