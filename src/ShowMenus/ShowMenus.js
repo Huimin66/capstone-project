@@ -58,11 +58,11 @@ const MenuNamePriceContainer = styled.div`
 `;
 
 const Menuname = styled.span`
-  color: #003366;
+  color: #036;
 `;
 
 const Menuprice = styled.span`
-  color: #003366;
+  color: #036;
   font-weight: 700;
   margin: auto 0;
 `;
