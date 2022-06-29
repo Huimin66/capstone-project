@@ -30,7 +30,6 @@ const MenusContainer = styled.ul`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0.5rem;
-  font-size: 0.8rem;
 `;
 
 const Menu = styled.li`
@@ -51,19 +50,19 @@ const MenuImg = styled.img`
 `;
 
 const MenuNamePriceContainer = styled.div`
-  margin: 0 auto;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
+  color: #036;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 5fr 1fr;
 `;
 
 const Menuname = styled.span`
-  color: #036;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 
 const Menuprice = styled.span`
-  color: #036;
   font-weight: 700;
-  margin: auto 0;
 `;
