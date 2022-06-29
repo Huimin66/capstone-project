@@ -27,18 +27,21 @@ const menusdata = [
     name: 'Mapo Tofu',
     image: 'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656491337/menu/Mapo-Tofu_w8q2yw.jpg',
     price: 6.9,
+    category: 'mains',
   },
   {
     id: nanoid(),
     name: 'Twice Cooked Pork',
     image: 'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656491338/menu/Twice-Cooked-Pork_hvovno.jpg',
     price: 12.9,
+    category: 'mains',
   },
   {
     id: nanoid(),
     name: 'Yuxiang Eggplant',
     image: 'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656491338/menu/Yu-Xiang-Eggplant_oyo3ai.jpg',
     price: 12.9,
+    category: 'mains',
   },
   {
     id: nanoid(),
@@ -46,48 +49,56 @@ const menusdata = [
     image:
       'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656491337/menu/squirrel-shaped-mandarin-fish_y74urn.jpg',
     price: 19.9,
+    category: 'mains',
   },
   {
     id: nanoid(),
     name: 'Fried Mushroom',
     image: 'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656491336/menu/Fried_Mushroom_br3rhv.jpg',
     price: 7.9,
+    category: 'mains',
   },
   {
     id: nanoid(),
     name: 'Celery and dried bean cord',
     image: 'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656491337/menu/Celery_and_dried_bean_cord_yapjzf.jpg',
     price: 12.9,
+    category: 'starters',
   },
   {
     id: nanoid(),
     name: 'Tossed Cucumber in Sauce',
     image: 'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656491338/menu/Tossed_Cucumber_in_Sauce_nvt4zt.jpg',
     price: 4.9,
+    category: 'starters',
   },
   {
     id: nanoid(),
     name: 'Water',
     image: 'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656490204/menu/Water_h8f4lh.jpg',
     price: 1.9,
+    category: 'drinks',
   },
   {
     id: nanoid(),
     name: 'Apple Spritzer',
     image: 'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656490203/menu/Apfelschorle_zxhwrj.jpg',
     price: 1.9,
+    category: 'drinks',
   },
   {
     id: nanoid(),
     name: 'Beer',
     image: 'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656490203/menu/beer_ppyotj.jpg',
     price: 2.9,
+    category: 'drinks',
   },
   {
     id: nanoid(),
     name: 'Chrysanthemum Tea',
     image: 'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656490202/menu/Chrysanthemum_Tea_mjx9vn.jpg',
     price: 2.9,
+    category: 'drinks',
   },
   {
     id: nanoid(),
@@ -95,24 +106,28 @@ const menusdata = [
     image:
       'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656490182/menu/Fried_Glutinous_Rice_Balls_with_Sesame_l8smoa.jpg',
     price: 4.9,
+    category: 'pastry',
   },
   {
     id: nanoid(),
     name: 'Yolk Pastry',
     image: 'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656490179/menu/Yolk_Pastry_d3bmmm.jpg',
     price: 2.9,
+    category: 'pastry',
   },
   {
     id: nanoid(),
     name: 'Mochi Balls',
     image: 'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656490180/menu/Mochi_Balls_jfydgr.jpg',
     price: 2.9,
+    category: 'pastry',
   },
   {
     id: nanoid(),
     name: 'Sim Sum',
     image: 'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656490181/menu/Sim_Sum_sw2nbo.jpg',
     price: 2.9,
+    category: 'pastry',
   },
 ];
 
