@@ -1,4 +1,4 @@
-import ShowMenus from './ShowMenus.js/index.js';
+import ShowMenus from '../ShowMenus/ShowMenus';
 
 export default {
   title: 'Components/ShowMenus',
