@@ -2,9 +2,9 @@ import '@testing-library/jest-dom/extend-expect';
 
 import {render, screen} from '@testing-library/react';
 
-import menusdata from '../data.js';
+import menusdata from '../../data.js';
 
-import ShowMenus from './ShowMenus.js';
+import ShowMenus from '../ShowMenus.js/index.js';
 
 describe('ShowMenus', () => {
   it('find all menus in the page', () => {

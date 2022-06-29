@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import styled from 'styled-components';
 
-import menusdata from '../data';
+import menusdata from '../../data.js';
 
 export default function ShowMenus() {
   /* eslint-disable-next-line */

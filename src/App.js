@@ -1,4 +1,4 @@
-import ShowMenus from './ShowMenus/ShowMenus.js';
+import ShowMenus from './components/ShowMenus/ShowMenus';
 
 export default function App() {
   return (
