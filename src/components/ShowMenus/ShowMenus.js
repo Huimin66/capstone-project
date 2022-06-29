@@ -30,6 +30,7 @@ const MenusContainer = styled.ul`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0.5rem;
+  font-size: 0.8rem;
 `;
 
 const Menu = styled.li`
