@@ -56,7 +56,7 @@ const menusdata = [
   {
     id: nanoid(),
     name: 'Celery and dried bean cord',
-    image: 'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656323428/menu/Celery_and_dried_bean_cord_qlkjvm.jpg',
+    image: 'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656491337/menu/Celery_and_dried_bean_cord_yapjzf.jpg',
     price: 12.9,
   },
   {
