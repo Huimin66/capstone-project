@@ -8,7 +8,7 @@ export default function ShowMenus() {
   const [menus, setmenus] = useState(menusdata);
 
   return (
-    <MenuContainer>
+    <MenusContainer>
       {menus.map(menu => {
         return (
           <Menu key={menu.id}>
@@ -20,11 +20,11 @@ export default function ShowMenus() {
           </Menu>
         );
       })}
-    </MenuContainer>
+    </MenusContainer>
   );
 }
 
-const MenuContainer = styled.ul`
+const MenusContainer = styled.ul`
   width: 80%;
   margin: 1rem 1rem 1rem auto;
   display: grid;
@@ -34,19 +34,20 @@ const MenuContainer = styled.ul`
 `;
 
 const Menu = styled.li`
+  width: 100%;
   margin: 0 auto;
   padding: 0.5rem;
   background-color: #dfdfe7;
   border-radius: 5px;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 15vh 1fr;
   gap: 0.5rem;
 `;
 
 const MenuImg = styled.img`
   border-radius: 5px;
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  height: 100%;
 `;
 
 const MenuNamePriceContainer = styled.div`
