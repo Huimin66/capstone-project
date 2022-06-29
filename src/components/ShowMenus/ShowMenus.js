@@ -40,7 +40,7 @@ const Menu = styled.li`
   background-color: #dfdfe7;
   border-radius: 5px;
   display: grid;
-  grid-template-rows: 15vh 1fr;
+  grid-template-rows: 80% 20%;
   gap: 0.5rem;
 `;
 
