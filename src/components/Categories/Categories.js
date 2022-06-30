@@ -66,7 +66,6 @@ const Category = styled.span`
   border-radius: 5px;
   width: 100%;
   padding: 0.8rem;
-  background-color: #f7f7f7;
   border-bottom: 1px solid #ababab;
   writing-mode: vertical-lr;
   text-orientation: upright;
@@ -74,5 +73,6 @@ const Category = styled.span`
   &:nth-last-child(1) {
     border-bottom: none;
   }
+
   background-color: ${({active}) => (active ? '#ffd9bb' : '#f7f7f7')};
 `;
