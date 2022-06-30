@@ -29,26 +29,26 @@ const MenusContainer = styled.ul`
   margin: 1rem 1rem 1rem auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  justify-content: start;
+  align-content: start;
   gap: 0.5rem;
   font-size: 0.8rem;
 `;
 
 const Menu = styled.li`
-  width: 100%;
-  height: 100%;
   margin: 0 auto;
   padding: 0.5rem;
   background-color: #dfdfe7;
   border-radius: 5px;
-  display: grid;
-  grid-template-rows: 80% 20%;
+  display: flex;
+  flex-direction: column;
   gap: 0.5rem;
 `;
 
 const MenuImg = styled.img`
   border-radius: 5px;
   width: 100%;
-  height: 100%;
+  height: auto;
 `;
 
 const MenuNamePriceContainer = styled.div`
