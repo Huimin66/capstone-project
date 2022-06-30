@@ -3,7 +3,6 @@ import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 
 import menusdata from '../../data.js';
-
 import ShowMenus from '../ShowMenus/ShowMenus';
 
 import Categories from './Categories.js';
