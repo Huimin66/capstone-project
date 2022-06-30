@@ -1,5 +1,4 @@
 import menusdata from '../../data.js';
-
 import ShowMenus from '../ShowMenus/ShowMenus';
 
 export default {
