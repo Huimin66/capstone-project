@@ -41,12 +41,12 @@ export default function Categories({menus, handleCategoryClick, curClickedCatego
   return (
     <CategoriesContainer>
       {categories.map(category => {
-        return curClickedCategory === category ? (
-          <Category key={category} active onClick={() => handleCategoryClick(category)}>
-            {category.toUpperCase()}
-          </Category>
-        ) : (
-          <Category key={category} onClick={() => handleCategoryClick(category)}>
+        return (
+          <Category
+            key={category}
+            active={curClickedCategory === category}
+            onClick={() => handleCategoryClick(category)}
+          >
             {category.toUpperCase()}
           </Category>
         );
