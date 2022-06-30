@@ -1,15 +1,23 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import styled from 'styled-components';
 
-import menusdata from '../../data.js';
+export default function ShowMenus({menus, curClickedCategory}) {
+  const [renderMenus, setRenderMenus] = useState([]);
 
-export default function ShowMenus() {
-  /* eslint-disable-next-line */
-  const [menus, setmenus] = useState(menusdata);
+  useEffect(() => {
+    if (curClickedCategory === 'All') setRenderMenus(menus);
+    else
+      setRenderMenus(
+        menus.filter(menu => {
+          return curClickedCategory === menu.category;
+        })
+      );
+    /* eslint-disable-next-line */
+  }, [curClickedCategory]);
 
   return (
     <MenusContainer>
-      {menus.map(menu => {
+      {renderMenus.map(menu => {
         return (
           <Menu key={menu.id}>
             <MenuImg src={menu.image} alt={menu.name} />
@@ -25,8 +33,6 @@ export default function ShowMenus() {
 }
 
 const MenusContainer = styled.ul`
-  width: 80%;
-  margin: 1rem 1rem 1rem auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-content: start;

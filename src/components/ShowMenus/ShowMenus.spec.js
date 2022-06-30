@@ -6,10 +6,18 @@ import menusdata from '../../data.js';
 import ShowMenus from '../ShowMenus/ShowMenus';
 
 describe('ShowMenus', () => {
-  it('find all menus in the page', () => {
-    render(<ShowMenus />);
+  it('find rendered menus in the page', () => {
+    render(<ShowMenus menus={menusdata} curClickedCategory="All" />);
     menusdata.forEach(menuItem => {
       expect(screen.getByText(menuItem.name)).toBeInTheDocument();
     });
+  });
+});
+
+describe('ShowMenus', () => {
+  it('find rendered menus in the page', () => {
+    render(<ShowMenus menus={menusdata} curClickedCategory="Drinks" />);
+    const water = screen.getByText('Water');
+    expect(water).toBeInTheDocument();
   });
 });
