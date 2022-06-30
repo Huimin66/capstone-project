@@ -1,5 +1,6 @@
-import Categories from './Categories.js';
 import menusdata from '../../data.js';
+
+import Categories from './Categories.js';
 
 export default {
   title: 'Components/Categories',
