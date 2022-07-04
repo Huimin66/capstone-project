@@ -6,6 +6,9 @@ import menusdata from '../../data.js';
 import ShowMenus from '../ShowMenus/ShowMenus';
 
 import Categories from './Categories.js';
+import useCategories from './useCategories';
+
+const {getAlternativeCategorie, getCategoriesAndSort} = useCategories();
 
 describe('Categories', () => {
   it('Category names', async () => {
@@ -28,5 +31,17 @@ describe('Categories', () => {
     render(<ShowMenus menus={menusdata} curClickedCategory="Starters" />);
     const cucumber = screen.getByText('Tossed Cucumber in Sauce');
     expect(cucumber).toBeInTheDocument();
+  });
+
+  it('Test function getAlternativeCategorie', () => {
+    const menuCategories = getAlternativeCategorie(menusdata);
+    expect(menuCategories).toStrictEqual(['All', 'Mains', 'Starters', 'Drinks', 'Pastries']);
+  });
+
+  it('Test function getAlternativeCategorie', () => {
+    const sortBy = ['All', 'Starters', 'Mains', 'Pastries', 'Drinks'];
+    const sortedMenuCategories = getCategoriesAndSort(menusdata, sortBy);
+    console.log(sortedMenuCategories);
+    expect(sortedMenuCategories).toStrictEqual(['All', 'Starters', 'Mains', 'Pastries', 'Drinks']);
   });
 });

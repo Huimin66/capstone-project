@@ -1,33 +1,21 @@
-import {useEffect, useState} from 'react';
 import styled from 'styled-components';
 
 export default function ShowMenus({menus, curClickedCategory}) {
-  const [renderMenus, setRenderMenus] = useState([]);
-
-  useEffect(() => {
-    if (curClickedCategory === 'All') setRenderMenus(menus);
-    else
-      setRenderMenus(
-        menus.filter(menu => {
-          return curClickedCategory === menu.category;
-        })
-      );
-    /* eslint-disable-next-line */
-  }, [curClickedCategory]);
-
   return (
     <MenusContainer>
-      {renderMenus.map(menu => {
-        return (
-          <Menu key={menu.id}>
-            <MenuImg src={menu.image} alt={menu.name} />
-            <MenuNamePriceContainer>
-              <Menuname>{menu.name}</Menuname>
-              <Menuprice>{menu.price + '€'}</Menuprice>
-            </MenuNamePriceContainer>
-          </Menu>
-        );
-      })}
+      {menus
+        .filter(menu => curClickedCategory === 'All' || menu.category === curClickedCategory)
+        .map(menu => {
+          return (
+            <Menu key={menu.id}>
+              <MenuImg src={menu.image} alt={menu.name} />
+              <MenuNamePriceContainer>
+                <Menuname>{menu.name}</Menuname>
+                <Menuprice>{menu.price + '€'}</Menuprice>
+              </MenuNamePriceContainer>
+            </Menu>
+          );
+        })}
     </MenusContainer>
   );
 }
