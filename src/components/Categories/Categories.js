@@ -12,7 +12,7 @@ export default function Categories({menus, handleCategoryClick, curClickedCatego
 
     const sortBy = ['All', 'Starters', 'Mains', 'Pastries', 'Drinks'];
     getCategoriesAndSort(menus, sortBy);
-  }, []);
+  }, [getAlternativeCategorie, getAlternativeCategorie, menus]);
 
   return (
     <CategoriesContainer>
