@@ -11,7 +11,7 @@ export default function useCategories() {
   }
 
   /* I want the menus showed in this order:  'All', 'Starters', 'Mains', 'Pastries', 'Drinks'*/
-  /* Without the following function the menus will be showed like:  'Mains', 'Starters', 'Pastries', 'Drinks'*/
+  /* Without the following function the menus will be showed like: 'All', 'Mains', 'Starters', 'Drinks', 'Pastries'*/
 
   function getCategoriesAndSort(menus, sortBy) {
     const categories = ['All'];

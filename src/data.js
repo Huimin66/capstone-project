@@ -11,7 +11,7 @@ const menusdata = [
   {
     id: nanoid(),
     name: 'Peking Duck',
-    image: 'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656491336/menu/Peking-Duck_ubytng.jpg',
+    image: 'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656683121/menu/Peking-Duck_s8bedg.jpg',
     price: 12.9,
     category: 'Mains',
   },
