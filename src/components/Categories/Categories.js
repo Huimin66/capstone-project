@@ -1,18 +1,17 @@
 import {useEffect, useState} from 'react';
 import styled from 'styled-components';
 
-import useCategories from './useCategories';
+import {getAlternativeCategorie, getCategoriesAndSort} from '../../utils/utils.js';
 
 export default function Categories({menus, handleCategoryClick, curClickedCategory}) {
   const [categories, setCategories] = useState([]);
-  const {getAlternativeCategorie, getCategoriesAndSort} = useCategories();
 
   useEffect(() => {
     setCategories(getAlternativeCategorie(menus));
 
     const sortBy = ['All', 'Starters', 'Mains', 'Pastries', 'Drinks'];
     getCategoriesAndSort(menus, sortBy);
-  }, [getAlternativeCategorie, getAlternativeCategorie, menus]);
+  }, [menus]);
 
   return (
     <CategoriesContainer>
