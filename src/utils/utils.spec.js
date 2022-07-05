@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom';
 
 import menusdata from '../data.js';
+
 import {getAlternativeCategorie, getCategoriesAndSort} from './utils.js';
 
 describe('Categories', () => {
