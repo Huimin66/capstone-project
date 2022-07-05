@@ -1,42 +1,17 @@
 import {useEffect, useState} from 'react';
 import styled from 'styled-components';
 
+import {getAlternativeCategorie, getCategoriesAndSort} from '../../utils/utils.js';
+
 export default function Categories({menus, handleCategoryClick, curClickedCategory}) {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    /* Get categories form the given menus */
-    function getCategories(menus) {
-      const categories = menus.reduce(
-        function (pre, cur) {
-          if (!pre.includes(cur.category)) {
-            pre.push(cur.category);
-          }
-          return pre;
-        },
-        ['All']
-      );
-      return categories;
-    }
+    setCategories(getAlternativeCategorie(menus));
 
-    setCategories(getCategories(menus));
-
-    /* Sort categories in this order */
     const sortBy = ['All', 'Starters', 'Mains', 'Pastries', 'Drinks'];
-    const categorySort = ({data, sortBy, sortfield}) => {
-      const sortByObj = sortBy.reduce(
-        (obj, item, index) => ({
-          ...obj,
-          [item]: index,
-        }),
-        {}
-      );
-      return data.sort((a, b) => sortByObj[a[sortfield]] - sortByObj[b[sortfield]]);
-    };
-
-    categorySort({data: menus, sortBy, sortfield: 'category'});
-    /* eslint-disable-next-line */
-  }, []);
+    getCategoriesAndSort(menus, sortBy);
+  }, [menus]);
 
   return (
     <CategoriesContainer>
