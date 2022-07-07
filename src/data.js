@@ -7,6 +7,29 @@ const menusdata = [
     image: 'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656491336/menu/Kung-Pao-chicken_owdyqj.jpg',
     price: 9.9,
     category: 'Mains',
+    ingredients: 'chicken breast, peanuts, chili peppers, soy sauce, baking soda, cornstarch, salt, oil',
+    taste: 'Spicy, Salty, Sweet',
+    spiciness: 3,
+    reviews: [
+      {
+        id: nanoid(),
+        image: 'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656491336/menu/Kung-Pao-chicken_owdyqj.jpg',
+        guest: 'Guest A',
+        text: 'This was the best Kung Pao chicken I have ever had.',
+      },
+      {
+        id: nanoid(),
+        image: '',
+        guest: 'Guest B',
+        text: 'Very spicy, too much for me, but everyone else loved it.',
+      },
+      {
+        id: nanoid(),
+        image: '',
+        guest: 'Guest C',
+        text: 'We also prefer cashews over the peanuts but either tastes good.',
+      },
+    ],
   },
   {
     id: nanoid(),
@@ -14,6 +37,28 @@ const menusdata = [
     image: 'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656683121/menu/Peking-Duck_s8bedg.jpg',
     price: 12.9,
     category: 'Mains',
+    ingredients: 'duck, lemon, honey, soy sauce, flour, spring onions, hoisin sauce, salt, oil',
+    spiciness: 0,
+    reviews: [
+      {
+        id: nanoid(),
+        image: 'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656683121/menu/Peking-Duck_s8bedg.jpg',
+        guest: 'Guest A',
+        text: 'This was the best Peking Duck I have ever had.',
+      },
+      {
+        id: nanoid(),
+        image: '',
+        guest: 'Guest B',
+        text: 'Very crispy, everyone loved it.',
+      },
+      {
+        id: nanoid(),
+        image: '',
+        guest: 'Guest C',
+        text: "The food wasn't bad, but wasn't wow..",
+      },
+    ],
   },
   {
     id: nanoid(),
@@ -21,6 +66,30 @@ const menusdata = [
     image: 'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656491337/menu/Sweet-and-Sour_Pork_mku0nw.jpg',
     price: 10.9,
     category: 'Mains',
+    ingredients:
+      'Pork, bell pepper, pineapple, cornstarch, ketchup, brown sugar, vinegar, garlic, ginger, onion, salt, oil',
+    taste: 'Sweet, Sour, Salty',
+    spiciness: 0,
+    reviews: [
+      {
+        id: nanoid(),
+        image: 'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656491337/menu/Sweet-and-Sour_Pork_mku0nw.jpg',
+        guest: 'Guest A',
+        text: 'This was the best Sweet and Sour Pork I have ever had.',
+      },
+      {
+        id: nanoid(),
+        image: '',
+        guest: 'Guest B',
+        text: 'Very delicious, everyone loved it.',
+      },
+      {
+        id: nanoid(),
+        image: '',
+        guest: 'Guest C',
+        text: "The food wasn't bad, but wasn't wow..",
+      },
+    ],
   },
   {
     id: nanoid(),
@@ -28,6 +97,29 @@ const menusdata = [
     image: 'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656491337/menu/Mapo-Tofu_w8q2yw.jpg',
     price: 6.9,
     category: 'Mains',
+    ingredients: 'Tofu, Chili Bohnen Paste, minced beef, salt, oil',
+    taste: 'Spicy, Salty',
+    spiciness: 3,
+    reviews: [
+      {
+        id: nanoid(),
+        image: 'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656491337/menu/Mapo-Tofu_w8q2yw.jpg',
+        guest: 'Guest A',
+        text: 'This was the best Mapo Tofu I have ever had.',
+      },
+      {
+        id: nanoid(),
+        image: '',
+        guest: 'Guest B',
+        text: 'Very delicious, everyone loved it.',
+      },
+      {
+        id: nanoid(),
+        image: '',
+        guest: 'Guest C',
+        text: "The food wasn't bad, but wasn't wow..",
+      },
+    ],
   },
   {
     id: nanoid(),
@@ -35,6 +127,30 @@ const menusdata = [
     image: 'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656491338/menu/Twice-Cooked-Pork_hvovno.jpg',
     price: 12.9,
     category: 'Mains',
+    ingredients:
+      'pork belly, bell pepper, chili bean paste,sweet bean paste , ginger, leek, Sichuan peppercorn, soy sauce, salt, oil',
+    taste: 'Spicy, Salty',
+    spiciness: 2,
+    reviews: [
+      {
+        id: nanoid(),
+        image: 'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656491338/menu/Twice-Cooked-Pork_hvovno.jpg',
+        guest: 'Guest A',
+        text: 'This was the best Twice Cooked Pork I have ever had.',
+      },
+      {
+        id: nanoid(),
+        image: '',
+        guest: 'Guest B',
+        text: 'Very delicious, everyone loved it.',
+      },
+      {
+        id: nanoid(),
+        image: '',
+        guest: 'Guest C',
+        text: "The food wasn't bad, but wasn't wow..",
+      },
+    ],
   },
   {
     id: nanoid(),
@@ -42,6 +158,30 @@ const menusdata = [
     image: 'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656491338/menu/Yu-Xiang-Eggplant_oyo3ai.jpg',
     price: 12.9,
     category: 'Mains',
+    ingredients:
+      'eggplant, fresh shiitake, garlic, ginger, green onionsoy sauce, oyster sauce, vinegar, brown sugar, cornstarch, sesame oil, salt, oil',
+    taste: 'Spicy, Sweet, Sour, Salty',
+    spiciness: 1,
+    reviews: [
+      {
+        id: nanoid(),
+        image: 'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656491338/menu/Yu-Xiang-Eggplant_oyo3ai.jpg',
+        guest: 'Guest A',
+        text: 'This was the best Yuxiang Eggplant I have ever had.',
+      },
+      {
+        id: nanoid(),
+        image: '',
+        guest: 'Guest B',
+        text: 'Very delicious, everyone loved it.',
+      },
+      {
+        id: nanoid(),
+        image: '',
+        guest: 'Guest C',
+        text: "The food wasn't bad, but wasn't wow..",
+      },
+    ],
   },
   {
     id: nanoid(),
@@ -50,6 +190,30 @@ const menusdata = [
       'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656491337/menu/squirrel-shaped-mandarin-fish_y74urn.jpg',
     price: 19.9,
     category: 'Mains',
+    ingredients: 'grass carp, Starch, minced garlic, Ketchup, sugar, soy sauce, vinegar, broth, salt, oil',
+    taste: 'Sweet, Sour, Salty',
+    spiciness: 0,
+    reviews: [
+      {
+        id: nanoid(),
+        image:
+          'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656491337/menu/squirrel-shaped-mandarin-fish_y74urn.jpg',
+        guest: 'Guest A',
+        text: 'This was the best Squirrel Shaped Mandarin Fish I have ever had.',
+      },
+      {
+        id: nanoid(),
+        image: '',
+        guest: 'Guest B',
+        text: 'Very delicious, everyone loved it.',
+      },
+      {
+        id: nanoid(),
+        image: '',
+        guest: 'Guest C',
+        text: "The food wasn't bad, but wasn't wow..",
+      },
+    ],
   },
   {
     id: nanoid(),
@@ -57,6 +221,29 @@ const menusdata = [
     image: 'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656491336/menu/Fried_Mushroom_br3rhv.jpg',
     price: 7.9,
     category: 'Mains',
+    ingredients: 'Oyster Mushroom, salt and black pepper to taste, flour, egg, salt, oil',
+    taste: 'Salty',
+    spiciness: 0,
+    reviews: [
+      {
+        id: nanoid(),
+        image: 'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656491336/menu/Fried_Mushroom_br3rhv.jpg',
+        guest: 'Guest A',
+        text: 'This was the best Fried Mushroom I have ever had.',
+      },
+      {
+        id: nanoid(),
+        image: '',
+        guest: 'Guest B',
+        text: 'Very crispy, everyone loved it.',
+      },
+      {
+        id: nanoid(),
+        image: '',
+        guest: 'Guest C',
+        text: "The food wasn't bad, but wasn't wow..",
+      },
+    ],
   },
   {
     id: nanoid(),
@@ -64,6 +251,30 @@ const menusdata = [
     image: 'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656491337/menu/Celery_and_dried_bean_cord_yapjzf.jpg',
     price: 12.9,
     category: 'Starters',
+    ingredients: 'celery stems, dry bean curd, onion, ginger, white vinegar, salt, oil',
+    taste: 'Spicy, Sweet, Salty',
+    spiciness: 1,
+    reviews: [
+      {
+        id: nanoid(),
+        image:
+          'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656491337/menu/Celery_and_dried_bean_cord_yapjzf.jpg',
+        guest: 'Guest A',
+        text: 'This was the best Celery and dried bean cord I have ever had.',
+      },
+      {
+        id: nanoid(),
+        image: '',
+        guest: 'Guest B',
+        text: 'Very delicious, everyone loved it.',
+      },
+      {
+        id: nanoid(),
+        image: '',
+        guest: 'Guest C',
+        text: "The food wasn't bad, but wasn't wow..",
+      },
+    ],
   },
   {
     id: nanoid(),
@@ -71,6 +282,29 @@ const menusdata = [
     image: 'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656491338/menu/Tossed_Cucumber_in_Sauce_nvt4zt.jpg',
     price: 4.9,
     category: 'Starters',
+    ingredients: 'cucumbers, granulated sugar, rice vinegar, sesame oil, light soy sauce, salt, oil',
+    taste: 'Spicy, Sweet, Sour, Salty',
+    spiciness: 2,
+    reviews: [
+      {
+        id: nanoid(),
+        image: 'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656491338/menu/Tossed_Cucumber_in_Sauce_nvt4zt.jpg',
+        guest: 'Guest A',
+        text: 'This was the best Tossed Cucumber in Sauce I have ever had.',
+      },
+      {
+        id: nanoid(),
+        image: '',
+        guest: 'Guest B',
+        text: 'Very delicious, everyone loved it.',
+      },
+      {
+        id: nanoid(),
+        image: '',
+        guest: 'Guest C',
+        text: "The food wasn't bad, but wasn't wow..",
+      },
+    ],
   },
   {
     id: nanoid(),
@@ -107,6 +341,30 @@ const menusdata = [
       'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656490182/menu/Fried_Glutinous_Rice_Balls_with_Sesame_l8smoa.jpg',
     price: 4.9,
     category: 'Pastries',
+    ingredients: 'red bean, sugar, glutinous rice flour, sesame, salt, oil',
+    taste: 'Sweet',
+    spiciness: 0,
+    reviews: [
+      {
+        id: nanoid(),
+        image:
+          'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656490182/menu/Fried_Glutinous_Rice_Balls_with_Sesame_l8smoa.jpg',
+        guest: 'Guest A',
+        text: 'This was the best Fried Glutinous Rice Balls I have ever had.',
+      },
+      {
+        id: nanoid(),
+        image: '',
+        guest: 'Guest B',
+        text: 'Very delicious, everyone loved it.',
+      },
+      {
+        id: nanoid(),
+        image: '',
+        guest: 'Guest C',
+        text: "The food wasn't bad, but wasn't wow..",
+      },
+    ],
   },
   {
     id: nanoid(),
@@ -114,6 +372,29 @@ const menusdata = [
     image: 'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656490179/menu/Yolk_Pastry_d3bmmm.jpg',
     price: 2.9,
     category: 'Pastries',
+    ingredients: 'flour, red beans, butter, white sugar, butter, sugar, egg yolk, lemon, sesame, salt, oil',
+    taste: 'Sweet',
+    spiciness: 0,
+    reviews: [
+      {
+        id: nanoid(),
+        image: 'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656490179/menu/Yolk_Pastry_d3bmmm.jpg',
+        guest: 'Guest A',
+        text: 'This was the best Yolk Pastry I have ever had.',
+      },
+      {
+        id: nanoid(),
+        image: '',
+        guest: 'Guest B',
+        text: 'Very delicious, everyone loved it.',
+      },
+      {
+        id: nanoid(),
+        image: '',
+        guest: 'Guest C',
+        text: "The food wasn't bad, but wasn't wow..",
+      },
+    ],
   },
   {
     id: nanoid(),
@@ -121,13 +402,60 @@ const menusdata = [
     image: 'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656490180/menu/Mochi_Balls_jfydgr.jpg',
     price: 2.9,
     category: 'Pastries',
+    ingredients: 'glutinous rice flour, red Bean, green tea powder, sugar, cornstarch, salt, oil',
+    taste: 'Sweet',
+    spiciness: 0,
+    reviews: [
+      {
+        id: nanoid(),
+        image: 'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656490180/menu/Mochi_Balls_jfydgr.jpg',
+        guest: 'Guest A',
+        text: 'This was the best Mochi Balls I have ever had.',
+      },
+      {
+        id: nanoid(),
+        image: '',
+        guest: 'Guest B',
+        text: 'Very delicious, everyone loved it.',
+      },
+      {
+        id: nanoid(),
+        image: '',
+        guest: 'Guest C',
+        text: "The food wasn't bad, but wasn't wow..",
+      },
+    ],
   },
   {
     id: nanoid(),
-    name: 'Sim Sum',
+    name: 'Dim Sum',
     image: 'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656490181/menu/Sim_Sum_sw2nbo.jpg',
     price: 2.9,
     category: 'Pastries',
+    ingredients:
+      'chicken breast, flour, napa cabbage, shiitake mushrooms, wheat starch, sugar, yeast, baking powder, salt, oil',
+    taste: 'Sweet, Salty',
+    spiciness: 0,
+    reviews: [
+      {
+        id: nanoid(),
+        image: 'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656490181/menu/Sim_Sum_sw2nbo.jpg',
+        guest: 'Guest A',
+        text: 'This was the best Dim Sum I have ever had.',
+      },
+      {
+        id: nanoid(),
+        image: '',
+        guest: 'Guest B',
+        text: 'Very delicious, everyone loved it.',
+      },
+      {
+        id: nanoid(),
+        image: '',
+        guest: 'Guest C',
+        text: "The food wasn't bad, but wasn't wow..",
+      },
+    ],
   },
 ];
 

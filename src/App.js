@@ -1,30 +1,16 @@
-import {useState} from 'react';
-import styled from 'styled-components';
+import {Routes, Route} from 'react-router-dom';
 
-import Categories from './components/Categories/Categories';
-import ShowMenus from './components/ShowMenus/ShowMenus';
 import menusdata from './data.js';
+import Details from './pages/Details.js';
+import Menus from './pages/Menus.js';
 
-export default function App() {
-  /* eslint-disable-next-line */
-  const [menus, setmenus] = useState(menusdata);
-  const [curClickedCategory, setCurClickedCategory] = useState('All');
-
-  function handleCategoryClick(curcategory) {
-    setCurClickedCategory(curcategory);
-  }
-
+function App() {
   return (
-    <Main>
-      <Categories menus={menus} curClickedCategory={curClickedCategory} handleCategoryClick={handleCategoryClick} />
-      <ShowMenus menus={menus} curClickedCategory={curClickedCategory} />
-    </Main>
+    <Routes>
+      <Route path="/" element={<Menus menusdata={menusdata} />} />
+      <Route path="/details/:id" element={<Details menusdata={menusdata} />} />
+    </Routes>
   );
 }
 
-const Main = styled.main`
-  display: flex;
-  gap: 0.5rem;
-  margin: 0 auto;
-  padding: 0.5rem;
-`;
+export default App;

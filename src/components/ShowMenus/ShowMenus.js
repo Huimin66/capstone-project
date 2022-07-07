@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
 export default function ShowMenus({menus, curClickedCategory}) {
@@ -7,13 +8,15 @@ export default function ShowMenus({menus, curClickedCategory}) {
         .filter(menu => curClickedCategory === 'All' || menu.category === curClickedCategory)
         .map(menu => {
           return (
-            <Menu key={menu.id}>
-              <MenuImg src={menu.image} alt={menu.name} />
-              <MenuNamePriceContainer>
-                <Menuname>{menu.name}</Menuname>
-                <Menuprice>{menu.price + '€'}</Menuprice>
-              </MenuNamePriceContainer>
-            </Menu>
+            <Link key={menu.id} to={`/details/${String(menu.id)}`}>
+              <Menu key={menu.id}>
+                <MenuImg src={menu.image} alt={menu.name} />
+                <MenuNamePriceContainer>
+                  <Menuname>{menu.name}</Menuname>
+                  <Menuprice>{menu.price + '€'}</Menuprice>
+                </MenuNamePriceContainer>
+              </Menu>
+            </Link>
           );
         })}
     </MenusContainer>
