@@ -5,18 +5,21 @@ import Categories from '../components/Categories/Categories.js';
 import ShowMenus from '../components/ShowMenus/ShowMenus';
 
 export default function Menus({menusdata}) {
-  /* eslint-disable-next-line */
-  const [menus, setmenus] = useState(menusdata);
-  const [curClickedCategory, setCurClickedCategory] = useState('All');
+  const [menus] = useState(menusdata);
+  const [currentClickedCategory, setCurrentClickedCategory] = useState('All');
 
-  function handleCategoryClick(curcategory) {
-    setCurClickedCategory(curcategory);
+  function handleCategoryClick(currentcategory) {
+    setCurrentClickedCategory(currentcategory);
   }
 
   return (
     <Main>
-      <Categories menus={menus} curClickedCategory={curClickedCategory} handleCategoryClick={handleCategoryClick} />
-      <ShowMenus menus={menus} curClickedCategory={curClickedCategory} />
+      <Categories
+        menus={menus}
+        currentClickedCategory={currentClickedCategory}
+        handleCategoryClick={handleCategoryClick}
+      />
+      <ShowMenus menus={menus} currentClickedCategory={currentClickedCategory} />
     </Main>
   );
 }

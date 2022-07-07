@@ -8,9 +8,7 @@ export default function Details({menusdata}) {
     <DetailPage>
       <Title>{currentmenu.name}</Title>
       <MainPic src={currentmenu.image} alt={currentmenu.name} />
-      {currentmenu.category === 'Drinks' ? (
-        <></>
-      ) : (
+      {currentmenu.category !== 'Drinks' && (
         <>
           <DesContainer>
             <Section>
@@ -31,7 +29,7 @@ export default function Details({menusdata}) {
             {currentmenu.reviews.map(review => {
               return (
                 <SingelReview key={review.id}>
-                  {review.image ? <ReviewImg src={review.image} alt={currentmenu.name} /> : <></>}
+                  {review.image && <ReviewImg src={review.image} alt={currentmenu.name} />}
                   <div>
                     {review.guest}: {review.text}
                   </div>
