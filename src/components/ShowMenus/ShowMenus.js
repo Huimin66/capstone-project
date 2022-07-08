@@ -1,21 +1,26 @@
+import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
-export default function ShowMenus({menus, curClickedCategory}) {
+export default function ShowMenus({menus, currentClickedCategory}) {
+  const filteredMenus = menus.filter(
+    menu => currentClickedCategory === 'All' || menu.category === currentClickedCategory
+  );
+
   return (
     <MenusContainer>
-      {menus
-        .filter(menu => curClickedCategory === 'All' || menu.category === curClickedCategory)
-        .map(menu => {
-          return (
-            <Menu key={menu.id}>
+      {filteredMenus.map(menu => {
+        return (
+          <Link key={menu.id} to={`/details/${String(menu.id)}`}>
+            <Menu>
               <MenuImg src={menu.image} alt={menu.name} />
               <MenuNamePriceContainer>
                 <Menuname>{menu.name}</Menuname>
                 <Menuprice>{menu.price + '€'}</Menuprice>
               </MenuNamePriceContainer>
             </Menu>
-          );
-        })}
+          </Link>
+        );
+      })}
     </MenusContainer>
   );
 }
