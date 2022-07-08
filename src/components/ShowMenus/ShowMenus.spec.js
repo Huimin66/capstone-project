@@ -3,7 +3,8 @@ import {render, screen} from '@testing-library/react';
 import {MemoryRouter} from 'react-router-dom';
 
 import menusdata from '../../data.js';
-import ShowMenus from '../ShowMenus/ShowMenus';
+
+import ShowMenus from './ShowMenus.js';
 
 describe('ShowMenus', () => {
   it('find rendered menus in the page', () => {
