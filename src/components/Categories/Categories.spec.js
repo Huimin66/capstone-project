@@ -1,10 +1,10 @@
 import {render, screen} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
-import {BrowserRouter} from 'react-router-dom';
 
 import menusdata from '../../data.js';
 import ShowMenus from '../ShowMenus/ShowMenus';
+import {MemoryRouter} from 'react-router-dom';
 
 import Categories from './Categories.js';
 
@@ -12,9 +12,9 @@ describe('Categories', () => {
   it('Category names', async () => {
     const callback = jest.fn();
     render(
-      <BrowserRouter>
-        <Categories menus={menusdata} curClickedCategory="All" handleCategoryClick={callback} />
-      </BrowserRouter>
+      <MemoryRouter>
+        <Categories menus={menusdata} currentClickedCategory="All" handleCategoryClick={callback} />
+      </MemoryRouter>
     );
 
     const user = userEvent.setup();
@@ -25,9 +25,9 @@ describe('Categories', () => {
   it('Test category and menus together', async () => {
     const callback = jest.fn();
     render(
-      <BrowserRouter>
-        <Categories menus={menusdata} curClickedCategory="Starters" handleCategoryClick={callback} />
-      </BrowserRouter>
+      <MemoryRouter>
+        <Categories menus={menusdata} currentClickedCategory="Starters" handleCategoryClick={callback} />
+      </MemoryRouter>
     );
 
     const user = userEvent.setup();
@@ -35,9 +35,9 @@ describe('Categories', () => {
     expect(callback).toHaveBeenCalled();
 
     render(
-      <BrowserRouter>
-        <ShowMenus menus={menusdata} curClickedCategory="Starters" />
-      </BrowserRouter>
+      <MemoryRouter>
+        <ShowMenus menus={menusdata} currentClickedCategory="Starters" />
+      </MemoryRouter>
     );
     const cucumber = screen.getByText('Tossed Cucumber in Sauce');
     expect(cucumber).toBeInTheDocument();
