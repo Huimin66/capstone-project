@@ -5,34 +5,34 @@ import AddToCart from '../components/AddToCart/AddToCart';
 
 export default function Details({menusdata}) {
   const params = useParams();
-  const currentmenu = menusdata.find(menu => menu.id === params.id);
+  const currentMenu = menusdata.find(menu => menu.id === params.id);
   return (
     <>
       <DetailPage>
-        <Title>{currentmenu.name}</Title>
-        <MainPic src={currentmenu.image} alt={currentmenu.name} />
-        {currentmenu.category !== 'Drinks' && (
+        <Title>{currentMenu.name}</Title>
+        <MainPic src={currentMenu.image} alt={currentMenu.name} />
+        {currentMenu.category !== 'Drinks' && (
           <>
             <DesContainer>
               <Section>
                 <h2>Taste: </h2>
-                {currentmenu.taste}
+                {currentMenu.taste}
               </Section>
               <Section>
                 <h2>Spiciness:</h2>
-                {currentmenu.spiciness} / 5
+                {currentMenu.spiciness} / 5
               </Section>
             </DesContainer>
             <Section>
               <h2>Ingredients:</h2>
-              <div>{currentmenu.ingredients}</div>
+              <div>{currentMenu.ingredients}</div>
             </Section>
             <Section>
               <h2>Review:</h2>
-              {currentmenu.reviews.map(review => {
+              {currentMenu.reviews.map(review => {
                 return (
                   <SingelReview key={review.id}>
-                    {review.image && <ReviewImg src={review.image} alt={currentmenu.name} />}
+                    {review.image && <ReviewImg src={review.image} alt={currentMenu.name} />}
                     <div>
                       {review.guest}: {review.text}
                     </div>
@@ -43,7 +43,7 @@ export default function Details({menusdata}) {
           </>
         )}
       </DetailPage>
-      <AddToCart currentmenu={currentmenu} />
+      <AddToCart currentMenu={currentMenu} />
     </>
   );
 }
