@@ -8,17 +8,27 @@ export default function ShoppingCart() {
     removeShoppingItem: state.removeShoppingItem,
   }));
 
+  console.log(shoppingItems);
+
   return (
-    <ShoppingCart>
+    <Main>
       {shoppingItems &&
         shoppingItems.map(item => {
           return (
-            <div key={item.id}>
+            <ItemContainer key={item.id}>
               <span>{item.name}</span>
               <span>{item.price}</span>
-            </div>
+            </ItemContainer>
           );
         })}
-    </ShoppingCart>
+    </Main>
   );
 }
+
+const Main = styled.main`
+  display: flex;
+  justify-content: flex-start;
+  gap: 2rem;
+`;
+
+const ItemContainer = styled.div``;

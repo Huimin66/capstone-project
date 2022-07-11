@@ -54,4 +54,3 @@ const Button = styled.button`
   border: none;
   padding: 0.5rem 1rem;
 `;
-

@@ -1,5 +1,5 @@
 import create from 'zustand';
-import {devtools, persist} from 'zustand/middleware';
+import {persist} from 'zustand/middleware';
 
 const shoppingItemsStore = set => ({
   shoppingItems: [],
@@ -15,6 +15,6 @@ const shoppingItemsStore = set => ({
   },
 });
 
-const useStore = create(devtools(persist(shoppingItemsStore, {name: 'shoppingItems'})));
+const useStore = create(persist(shoppingItemsStore, {name: 'shoppingItems'}));
 
 export default useStore;
