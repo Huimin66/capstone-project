@@ -1,45 +1,50 @@
 import {useParams} from 'react-router-dom';
 import styled from 'styled-components';
 
+import AddToCart from '../components/AddToCart/AddToCart';
+
 export default function Details({menusdata}) {
   const params = useParams();
   const currentmenu = menusdata.find(menu => menu.id === params.id);
   return (
-    <DetailPage>
-      <Title>{currentmenu.name}</Title>
-      <MainPic src={currentmenu.image} alt={currentmenu.name} />
-      {currentmenu.category !== 'Drinks' && (
-        <>
-          <DesContainer>
+    <>
+      <DetailPage>
+        <Title>{currentmenu.name}</Title>
+        <MainPic src={currentmenu.image} alt={currentmenu.name} />
+        {currentmenu.category !== 'Drinks' && (
+          <>
+            <DesContainer>
+              <Section>
+                <h2>Taste: </h2>
+                {currentmenu.taste}
+              </Section>
+              <Section>
+                <h2>Spiciness:</h2>
+                {currentmenu.spiciness} / 5
+              </Section>
+            </DesContainer>
             <Section>
-              <h2>Taste: </h2>
-              {currentmenu.taste}
+              <h2>Ingredients:</h2>
+              <div>{currentmenu.ingredients}</div>
             </Section>
             <Section>
-              <h2>Spiciness:</h2>
-              {currentmenu.spiciness} / 5
+              <h2>Review:</h2>
+              {currentmenu.reviews.map(review => {
+                return (
+                  <SingelReview key={review.id}>
+                    {review.image && <ReviewImg src={review.image} alt={currentmenu.name} />}
+                    <div>
+                      {review.guest}: {review.text}
+                    </div>
+                  </SingelReview>
+                );
+              })}
             </Section>
-          </DesContainer>
-          <Section>
-            <h2>Ingredients:</h2>
-            <div>{currentmenu.ingredients}</div>
-          </Section>
-          <Section>
-            <h2>Review:</h2>
-            {currentmenu.reviews.map(review => {
-              return (
-                <SingelReview key={review.id}>
-                  {review.image && <ReviewImg src={review.image} alt={currentmenu.name} />}
-                  <div>
-                    {review.guest}: {review.text}
-                  </div>
-                </SingelReview>
-              );
-            })}
-          </Section>
-        </>
-      )}
-    </DetailPage>
+          </>
+        )}
+      </DetailPage>
+      <AddToCart currentmenu={currentmenu} />
+    </>
   );
 }
 
@@ -51,12 +56,8 @@ const DetailPage = styled.main`
   justify-content: flex-start;
   align-items: flex-start;
   gap: 0.5rem;
-  overflow: hidden;
-  position: fixed;
-  width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: #dfdfe7;
-  background-size: cover;
   color: #036;
   overflow-y: scroll;
 `;
