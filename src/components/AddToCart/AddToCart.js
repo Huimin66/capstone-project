@@ -1,10 +1,28 @@
+import {nanoid} from 'nanoid';
 import styled from 'styled-components';
 
-export default function AddToCart({currentmenu}) {
+import useStore from '../../hooks/useStore.js';
+
+export default function AddToCart({currentMenu}) {
+  const {addShoppingItem} = useStore(state => ({
+    addShoppingItem: state.addShoppingItem,
+  }));
+
+  function handleAddToCart(currentMenu) {
+    const newMenu = {
+      id: nanoid(),
+      name: currentMenu.name,
+      image: currentMenu.image,
+      price: currentMenu.price,
+    };
+    addShoppingItem(newMenu);
+    alert('Added to cart');
+  }
+
   return (
     <AddToCartContainer>
-      <Span>{currentmenu.price}€</Span>
-      <Button>ADD TO CART</Button>
+      <Span>{currentMenu.price}€</Span>
+      <Button onClick={() => handleAddToCart(currentMenu)}>ADD TO CART</Button> {/* +1 */}
     </AddToCartContainer>
   );
 }
@@ -36,3 +54,4 @@ const Button = styled.button`
   border: none;
   padding: 0.5rem 1rem;
 `;
+
