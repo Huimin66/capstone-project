@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-export default function AddToCart({currentmenu}) {
+export default function AddToCart({currentMenu}) {
   return (
     <AddToCartContainer>
-      <Span>{currentmenu.price}€</Span>
+      <Span>{currentMenu.price}€</Span>
       <Button>ADD TO CART</Button>
     </AddToCartContainer>
   );
