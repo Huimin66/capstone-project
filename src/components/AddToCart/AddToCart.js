@@ -22,7 +22,7 @@ export default function AddToCart({currentMenu}) {
   return (
     <AddToCartContainer>
       <Span>{currentMenu.price}€</Span>
-      <Button onClick={() => handleAddToCart(currentMenu)}>ADD TO CART</Button> {/* +1 */}
+      <Button onClick={() => handleAddToCart(currentMenu)}>ADD TO CART</Button> 
     </AddToCartContainer>
   );
 }
