@@ -13,11 +13,6 @@ const shoppingItemsStore = set => ({
       shoppingItems: state.shoppingItems.filter(item => item.id !== itemId),
     }));
   },
-  emptyShoppingItem: () => {
-    set(() => ({
-      shoppingItems: [],
-    }));
-  },
 
   plusItemQuantity: itemId => {
     set(state => ({

@@ -12,9 +12,11 @@ export default function ShoppingCart() {
     minusItemQuantity: state.minusItemQuantity,
     plusItemQuantity: state.plusItemQuantity,
   }));
-
-  console.log(shoppingItems);
-
+  function subtotal() {
+    return shoppingItems
+      .map(item => item.price * item.quantity)
+      .reduce((previousValue, currentValue) => previousValue + currentValue, 0);
+  }
   return (
     <Main>
       <h1>Shopping Cart</h1>
@@ -49,7 +51,10 @@ export default function ShoppingCart() {
               );
             })}
           </CartContainer>
-          <SumContainer>total</SumContainer>
+          <SumContainer>
+            Subtotal:
+            {subtotal().toFixed(2)} €
+          </SumContainer>
         </>
       )}
     </Main>
@@ -59,6 +64,7 @@ export default function ShoppingCart() {
 const Main = styled.main`
   height: 100vh;
   padding: 0.5rem;
+  display: initial;
 `;
 
 const CartContainer = styled.div`
@@ -113,8 +119,10 @@ const FontContainer = styled.div`
 
 const SumContainer = styled.div`
   width: 100%;
-  height: 3rem;
-  position: sticky;
+  height: 4rem;
+  padding: 0 1rem;
+  position: fixed;
   bottom: 0;
-  left: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
 `;
