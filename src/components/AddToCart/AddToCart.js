@@ -4,25 +4,30 @@ import styled from 'styled-components';
 import useStore from '../../hooks/useStore.js';
 
 export default function AddToCart({currentMenu}) {
-  const {addShoppingItem} = useStore(state => ({
+  const {shoppingItems, addShoppingItem} = useStore(state => ({
+    shoppingItems: state.shoppingItems,
     addShoppingItem: state.addShoppingItem,
   }));
 
   function handleAddToCart(currentMenu) {
-    const newMenu = {
-      id: nanoid(),
-      name: currentMenu.name,
-      image: currentMenu.image,
-      price: currentMenu.price,
-    };
-    addShoppingItem(newMenu);
+    const findItem = shoppingItems.find(item => item.name === currentMenu.name);
+    if (!findItem) {
+      const newShoppingItem = {
+        id: nanoid(),
+        name: currentMenu.name,
+        image: currentMenu.image,
+        price: currentMenu.price,
+        quantity: 1,
+      };
+      addShoppingItem(newShoppingItem);
+    }
     alert('Added to cart');
   }
 
   return (
     <AddToCartContainer>
       <Span>{currentMenu.price}€</Span>
-      <Button onClick={() => handleAddToCart(currentMenu)}>ADD TO CART</Button> 
+      <Button onClick={() => handleAddToCart(currentMenu)}>ADD TO CART</Button>
     </AddToCartContainer>
   );
 }

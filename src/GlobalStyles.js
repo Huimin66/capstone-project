@@ -17,6 +17,7 @@ export default styled.createGlobalStyle`
     height: 100vh;
     font-family: sans-serif;
     max-width: 600px;
+    background-color: #dfdfe7;
   }
 
   ul,
