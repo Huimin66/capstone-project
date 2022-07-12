@@ -57,9 +57,8 @@ export default function ShoppingCart() {
 }
 
 const Main = styled.main`
-  padding: 0.5rem;
   height: 100vh;
-  display: block;
+  padding: 0.5rem;
 `;
 
 const CartContainer = styled.div`
@@ -76,7 +75,6 @@ const ItemContainer = styled.div`
   align-items: center;
   gap: 1rem;
   padding: 0 0.5rem;
-  background-color: white;
 `;
 
 const IMG = styled.img`
