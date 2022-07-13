@@ -1,12 +1,11 @@
 import {faTrashCan} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {BiMinus, BiPlus} from 'react-icons/bi';
-import {ToastContainer} from 'react-toastify';
+import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import styled from 'styled-components';
 
 import useStore from '../hooks/useStore.js';
-import {displayToast} from '../utils/utils.js';
 
 export default function ShoppingCart() {
   const {shoppingItems, removeShoppingItem, decreaseItemQuantity, increaseItemQuantity} = useStore(state => ({
@@ -15,8 +14,6 @@ export default function ShoppingCart() {
     decreaseItemQuantity: state.decreaseItemQuantity,
     increaseItemQuantity: state.increaseItemQuantity,
   }));
-
-  let toastId = null;
 
   function subtotal() {
     return shoppingItems
@@ -27,13 +24,21 @@ export default function ShoppingCart() {
   function handleDecreaseQuality(id) {
     const findItem = shoppingItems.find(item => item.id === id);
     if (findItem) {
-      findItem.quantity <= 1 ? displayToast(toastId, "Quantity can't be less than 1!") : decreaseItemQuantity(id);
+      findItem.quantity <= 1
+        ? toast("Quantity can't be less than 1!", {
+            closeOnClick: true,
+            toastId: 'my_toast',
+            autoClose: 2000,
+            closeButton: true,
+            position: toast.POSITION.TOP_CENTER,
+          })
+        : decreaseItemQuantity(id);
     }
   }
 
   return (
     <Main>
-      <h1>Shopping Cart</h1>
+      <H1>Shopping Cart</H1>
       {shoppingItems.length === 0 ? (
         <div>Your shopping cart is empty!</div>
       ) : (
@@ -78,17 +83,19 @@ export default function ShoppingCart() {
 
 const Main = styled.main`
   height: 100vh;
-  margin: 1rem;
 `;
 
+const H1 = styled.h1`
+  margin: 1rem;
+`;
 const CartContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  margin-top: 1rem;
+  margin: 1rem;
 `;
 const ItemContainer = styled.div`
-  height: 5rem;
+  height: 6rem;
   background-color: white;
   border-radius: 5px;
   display: flex;
@@ -134,9 +141,11 @@ const FontContainer = styled.div`
 const SumContainer = styled.div`
   width: 100%;
   height: 4rem;
-  padding: 0 1rem;
   position: fixed;
   bottom: 0;
   font-size: 1.2rem;
   font-weight: 700;
+  background-color: #f77c00;
+  text-align: center;
+  line-height: 4rem;
 `;

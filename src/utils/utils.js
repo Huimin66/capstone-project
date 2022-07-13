@@ -30,16 +30,3 @@ export function getCategoriesAndSort(menus, sortBy) {
   const sortedCategories = categories.sort((a, b) => sortByObj[a] - sortByObj[b]);
   return sortedCategories;
 }
-
-/* filter toastify, if not filtered, there can be a lot of toastify messages showed at the same time */
-export function displayToast(toastId, message) {
-  if (!toast.isActive(toastId)) {
-    toastId = toast(message, {
-      closeOnClick: true,
-      toastId: 'my_toast',
-      autoClose: 2000,
-      closeButton: true,
-      position: toast.POSITION.TOP_CENTER,
-    });
-  }
-}

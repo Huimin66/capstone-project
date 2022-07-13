@@ -1,14 +1,11 @@
 import {nanoid} from 'nanoid';
-import {ToastContainer} from 'react-toastify';
+import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import styled from 'styled-components';
 
 import useStore from '../../hooks/useStore.js';
-import {displayToast} from '../../utils/utils.js';
 
 export default function AddToCart({currentMenu}) {
-  let toastId = null;
-
   const {shoppingItems, addShoppingItem} = useStore(state => ({
     shoppingItems: state.shoppingItems,
     addShoppingItem: state.addShoppingItem,
@@ -26,7 +23,13 @@ export default function AddToCart({currentMenu}) {
       };
       addShoppingItem(newShoppingItem);
     }
-    displayToast(toastId, 'Added to cart!');
+    toast('Added to cart!', {
+      closeOnClick: true,
+      toastId: 'my_toast',
+      autoClose: 2000,
+      closeButton: true,
+      position: toast.POSITION.TOP_CENTER,
+    });
   }
 
   return (
