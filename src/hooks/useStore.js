@@ -14,14 +14,14 @@ const shoppingItemsStore = set => ({
     }));
   },
 
-  plusItemQuantity: itemId => {
+  increaseItemQuantity: itemId => {
     set(state => ({
       shoppingItems: state.shoppingItems.map(item =>
         item.id === itemId ? {...item, quantity: item.quantity + 1} : item
       ),
     }));
   },
-  minusItemQuantity: itemId => {
+  decreaseItemQuantity: itemId => {
     set(state => ({
       shoppingItems: state.shoppingItems.map(item =>
         item.id === itemId ? {...item, quantity: item.quantity > 1 ? item.quantity - 1 : item.quantity} : item

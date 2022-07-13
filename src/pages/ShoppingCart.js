@@ -1,22 +1,36 @@
 import {faTrashCan} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {BiMinus, BiPlus} from 'react-icons/bi';
+import {ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import styled from 'styled-components';
 
 import useStore from '../hooks/useStore.js';
+import {displayToast} from '../utils/utils.js';
 
 export default function ShoppingCart() {
-  const {shoppingItems, removeShoppingItem, minusItemQuantity, plusItemQuantity} = useStore(state => ({
+  const {shoppingItems, removeShoppingItem, decreaseItemQuantity, increaseItemQuantity} = useStore(state => ({
     shoppingItems: state.shoppingItems,
     removeShoppingItem: state.removeShoppingItem,
-    minusItemQuantity: state.minusItemQuantity,
-    plusItemQuantity: state.plusItemQuantity,
+    decreaseItemQuantity: state.decreaseItemQuantity,
+    increaseItemQuantity: state.increaseItemQuantity,
   }));
+
+  let toastId = null;
+
   function subtotal() {
     return shoppingItems
       .map(item => item.price * item.quantity)
       .reduce((previousValue, currentValue) => previousValue + currentValue, 0);
   }
+
+  function handleDecreaseQuality(id) {
+    const findItem = shoppingItems.find(item => item.id === id);
+    if (findItem) {
+      findItem.quantity <= 1 ? displayToast(toastId, "Quantity can't be less than 1!") : decreaseItemQuantity(id);
+    }
+  }
+
   return (
     <Main>
       <h1>Shopping Cart</h1>
@@ -28,18 +42,18 @@ export default function ShoppingCart() {
             {shoppingItems.map(item => {
               return (
                 <ItemContainer key={item.id}>
-                  <IMG src={item.image} />
+                  <IMG src={item.image} alt={item.name} />
                   <RightContainer>
                     <NamePriceContainer>
                       <span>{item.name}</span>
                       <span>{item.price}€</span>
                     </NamePriceContainer>
                     <OperateContainer>
-                      <Operater onClick={() => minusItemQuantity(item.id)}>
+                      <Operater onClick={() => handleDecreaseQuality(item.id)}>
                         <BiMinus />
                       </Operater>
                       <span>{item.quantity}</span>
-                      <Operater onClick={() => plusItemQuantity(item.id)}>
+                      <Operater onClick={() => increaseItemQuantity(item.id)}>
                         <BiPlus />
                       </Operater>
                       <FontContainer>
@@ -55,6 +69,7 @@ export default function ShoppingCart() {
             Subtotal:
             {subtotal().toFixed(2)} €
           </SumContainer>
+          <ToastContainer />
         </>
       )}
     </Main>
@@ -63,15 +78,14 @@ export default function ShoppingCart() {
 
 const Main = styled.main`
   height: 100vh;
-  padding: 0.5rem;
-  display: initial;
+  margin: 1rem;
 `;
 
 const CartContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  margin: 1rem 0;
+  margin-top: 1rem;
 `;
 const ItemContainer = styled.div`
   height: 5rem;
