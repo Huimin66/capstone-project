@@ -82,6 +82,7 @@ export default function ShoppingCart() {
 }
 
 const Main = styled.main`
+  width: 100%;
   height: 100vh;
 `;
 
@@ -139,6 +140,7 @@ const FontContainer = styled.div`
 `;
 
 const SumContainer = styled.div`
+  max-width: 600px;
   width: 100%;
   height: 4rem;
   position: fixed;
