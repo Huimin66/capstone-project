@@ -37,7 +37,7 @@ const MenusContainer = styled.ul`
 const Menu = styled.li`
   margin: 0 auto;
   padding: 0.5rem;
-  background-color: #dfdfe7;
+  background-color: #f7f7f7;
   border-radius: 5px;
   display: flex;
   flex-direction: column;

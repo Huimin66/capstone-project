@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import {getAlternativeCategorie, getCategoriesAndSort} from '../../utils/utils.js';
 
-export default function Categories({menus, handleCategoryClick, curClickedCategory}) {
+export default function Categories({menus, handleCategoryClick, currentClickedCategory}) {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
@@ -19,7 +19,7 @@ export default function Categories({menus, handleCategoryClick, curClickedCatego
         return (
           <Category
             key={category}
-            active={curClickedCategory === category}
+            active={currentClickedCategory === category}
             onClick={() => handleCategoryClick(category)}
           >
             {category.toUpperCase()}
