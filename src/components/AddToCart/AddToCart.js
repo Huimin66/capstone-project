@@ -10,7 +10,7 @@ export default function AddToCart({currentMenu}) {
     shoppingItems: state.shoppingItems,
     addShoppingItem: state.addShoppingItem,
   }));
-
+  console.log(currentMenu);
   function handleAddToCart(currentMenu) {
     const findItem = shoppingItems.find(item => item.name === currentMenu.name);
     if (!findItem) {
@@ -44,27 +44,22 @@ export default function AddToCart({currentMenu}) {
 const AddToCartContainer = styled.div`
   width: 100%;
   height: 3rem;
-  position: sticky;
-  bottom: 0;
-  left: 0;
   font-weight: 700;
-  display: flex;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
 `;
 const Span = styled.span`
-  width: 100%;
-  height: 100%;
   font-size: 1.4rem;
-  background-color: #ccc;
+  background-color: #efefef;
   text-align: center;
   line-height: 3rem;
+  border-radius: 5px;
 `;
 
 const Button = styled.button`
-  width: 100%;
-  height: 100%;
   color: white;
   background-color: #f77c00;
   border: none;
-  padding: 0.5rem 1rem;
+  border-radius: 5px;
 `;

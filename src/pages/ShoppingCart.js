@@ -5,6 +5,9 @@ import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import styled from 'styled-components';
 
+import BackToPreviousPages from '../components/BackToPreviousPage/BackToPreviousPage.js';
+import Navigation from '../components/Navigation/Navigation.js';
+import ScrollTop from '../components/ScrollTop/ScrollTop.js';
 import useStore from '../hooks/useStore.js';
 
 export default function ShoppingCart() {
@@ -38,7 +41,11 @@ export default function ShoppingCart() {
 
   return (
     <Main>
-      <H1>Shopping Cart</H1>
+      <BackAndTitle>
+        <BackToPreviousPages />
+        <h1>Shopping Cart</h1>
+      </BackAndTitle>
+
       {shoppingItems.length === 0 ? (
         <div>Your shopping cart is empty!</div>
       ) : (
@@ -74,21 +81,29 @@ export default function ShoppingCart() {
             Subtotal:
             {subtotal().toFixed(2)} €
           </SumContainer>
-          <ToastContainer />
         </>
       )}
+      <ScrollTop />
+      <ToastContainer />
+
+      <Navigation />
     </Main>
   );
 }
 
 const Main = styled.main`
   width: 100%;
-  height: 100vh;
+  padding-bottom: 4rem;
+  color: #036;
 `;
 
-const H1 = styled.h1`
+const BackAndTitle = styled.div`
   margin: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 `;
+
 const CartContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -140,14 +155,12 @@ const FontContainer = styled.div`
 `;
 
 const SumContainer = styled.div`
-  max-width: 600px;
-  width: 100%;
-  height: 4rem;
-  position: fixed;
-  bottom: 0;
+  height: 3rem;
+  border-radius: 5px;
   font-size: 1.2rem;
   font-weight: 700;
   background-color: #f77c00;
   text-align: center;
-  line-height: 4rem;
+  line-height: 3rem;
+  margin: 0 1rem;
 `;

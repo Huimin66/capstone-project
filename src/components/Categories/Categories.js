@@ -49,5 +49,5 @@ const Category = styled.span`
     border-bottom: none;
   }
 
-  background-color: ${({active}) => (active ? '#ffd9bb' : '#f7f7f7')};
+  background-color: ${({active}) => (active ? '#f77c00' : '#f7f7f7')};
 `;

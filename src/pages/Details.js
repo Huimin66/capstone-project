@@ -2,6 +2,9 @@ import {useParams} from 'react-router-dom';
 import styled from 'styled-components';
 
 import AddToCart from '../components/AddToCart/AddToCart';
+import BackToPreviousPage from '../components/BackToPreviousPage/BackToPreviousPage';
+import Navigation from '../components/Navigation/Navigation';
+import ScrollTop from '../components/ScrollTop/ScrollTop.js';
 
 export default function Details({menusdata}) {
   const params = useParams();
@@ -9,8 +12,12 @@ export default function Details({menusdata}) {
   return (
     <>
       <DetailPage>
-        <Title>{currentMenu.name}</Title>
+        <BackAndTitle>
+          <BackToPreviousPage />
+          <Title>{currentMenu.name}</Title>
+        </BackAndTitle>
         <MainPic src={currentMenu.image} alt={currentMenu.name} />
+        <AddToCart currentMenu={currentMenu} />
         {currentMenu.category !== 'Drinks' && (
           <>
             <DesContainer>
@@ -43,7 +50,8 @@ export default function Details({menusdata}) {
           </>
         )}
       </DetailPage>
-      <AddToCart currentMenu={currentMenu} />
+      <ScrollTop />
+      <Navigation />
     </>
   );
 }
@@ -56,15 +64,19 @@ const DetailPage = styled.main`
   justify-content: flex-start;
   align-items: flex-start;
   gap: 0.5rem;
-  height: 100vh;
   background-color: #dfdfe7;
   color: #036;
-  overflow-y: scroll;
+  padding-bottom: 3rem;
 `;
 const Title = styled.h1`
   font-size: 1.8rem;
 `;
 
+const BackAndTitle = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+`;
 const MainPic = styled.img`
   width: 100%;
   height: auto;
@@ -95,5 +107,4 @@ const ReviewImg = styled.img`
 const SingelReview = styled.div`
   width: 100%;
   border-bottom: 1px solid #d3d3d3;
-  margin-top: 1rem;
 `;

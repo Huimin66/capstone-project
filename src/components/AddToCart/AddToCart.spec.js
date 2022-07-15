@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom/extend-expect';
 import {render, screen} from '@testing-library/react';
 import {nanoid} from 'nanoid';
-
+import {MemoryRouter} from 'react-router-dom';
 import AddToCart from './AddToCart.js';
 
 const currentMenuData = {
@@ -37,12 +37,12 @@ const currentMenuData = {
 
 describe('AddToCart', () => {
   it('find price of the current dish in the page', () => {
-    render(<AddToCart currentmenu={currentMenuData} />);
+    render(
+      <MemoryRouter>
+        <AddToCart currentMenu={currentMenuData} />
+      </MemoryRouter>
+    );
     expect(screen.getByText('9.9€')).toBeInTheDocument();
-  });
-
-  it('find add to cart button in the page', () => {
-    render(<AddToCart currentMenu={currentMenuData} />);
     expect(screen.getByText('ADD TO CART')).toBeInTheDocument();
   });
 });

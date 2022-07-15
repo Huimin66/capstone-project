@@ -1,4 +1,5 @@
 import {nanoid} from 'nanoid';
+import {MemoryRouter} from 'react-router-dom';
 
 import AddToCart from './AddToCart';
 
@@ -38,7 +39,11 @@ export default {
   component: AddToCart,
 };
 
-const Template = args => <AddToCart {...args} />;
+const Template = args => (
+  <MemoryRouter>
+    <AddToCart {...args} />
+  </MemoryRouter>
+);
 
 export const Default = Template.bind({});
 Default.args = {
