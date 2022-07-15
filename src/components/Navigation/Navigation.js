@@ -48,7 +48,6 @@ const StyledUl = styled.ul`
 const NavContainer = styled.div`
   display: flex;
   flex-direction: column;
-  /*   color: black; */
   justify-content: center;
   align-items: center;
 `;
