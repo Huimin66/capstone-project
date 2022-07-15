@@ -47,7 +47,7 @@ export default function ShoppingCart() {
       </BackAndTitle>
 
       {shoppingItems.length === 0 ? (
-        <div>Your shopping cart is empty!</div>
+        <Message>Your shopping cart is empty!</Message>
       ) : (
         <>
           <CartContainer>
@@ -162,4 +162,11 @@ const SumContainer = styled.div`
   text-align: center;
   line-height: 3rem;
   margin: 0 1rem;
+`;
+
+const Message = styled.div`
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 2rem;
+  margin: 0 auto;
 `;
