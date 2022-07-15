@@ -50,5 +50,5 @@ const Template = args => <AddToCart {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  currentmenu: currentMenu,
+  currentMenu: currentMenu,
 };
