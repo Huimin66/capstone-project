@@ -24,7 +24,6 @@ export default function Menus({menusdata}) {
         />
         <ShowMenus menus={menus} currentClickedCategory={currentClickedCategory} />
       </Main>
-      <ScrollTop />
       <Navigation />
     </>
   );

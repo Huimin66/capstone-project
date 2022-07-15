@@ -85,9 +85,7 @@ export default function ShoppingCart() {
       )}
 
       <ToastContainer />
-
       <Navigation />
-      <ScrollTop />
     </Main>
   );
 }
