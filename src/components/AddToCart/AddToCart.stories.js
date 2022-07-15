@@ -35,17 +35,15 @@ const currentMenu = {
 };
 
 export default {
-  title: 'Components/AddToCart',
+  title: 'Component/AddToCart',
   component: AddToCart,
+  decorators: [
+    AddToCart => (
+      <MemoryRouter>
+        <AddToCart />
+      </MemoryRouter>
+    ),
+  ],
 };
 
-const Template = args => (
-  <MemoryRouter>
-    <AddToCart {...args} />
-  </MemoryRouter>
-);
-
-export const Default = Template.bind({});
-Default.args = {
-  currentmenu: currentMenu,
-};
+export const AddToCartDefault = <AddToCart currentMenu={currentMenu} />;
