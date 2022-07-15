@@ -46,7 +46,7 @@ const AddToCartContainer = styled.div`
   height: 3rem;
   font-weight: 700;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 0.5rem;
 `;
 const Span = styled.span`

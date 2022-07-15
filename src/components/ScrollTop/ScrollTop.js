@@ -10,9 +10,10 @@ export default function ScrollTop() {
 }
 
 const ScrollTopContainer = styled.div`
-  position: fixed;
+  width: 2rem;
+  position: sticky;
   bottom: 4rem;
-  right: 2rem;
+  left: 85%;
   padding: 0.2rem 0.25rem 0;
   font-size: 1.5rem;
   line-height: 1.5rem;

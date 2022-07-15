@@ -8,20 +8,20 @@ export default function Navigation() {
     <Nav>
       <StyledUl>
         <li>
-          <NavLink to="/" style={({isActive}) => (isActive ? {color: '#f77c00'} : {color: 'black'})}>
+          <StyledNavLink to="/">
             <NavContainer>
               <MdMenuBook data-testid="menus-icon" />
               <Span>Menus</Span>
             </NavContainer>
-          </NavLink>
+          </StyledNavLink>
         </li>
         <li>
-          <NavLink to="/cart" style={({isActive}) => (isActive ? {color: '#f77c00'} : {color: 'black'})}>
+          <StyledNavLink to="/cart">
             <NavContainer>
               <FiShoppingCart data-testid="cart-icon" />
               <Span>Cart</Span>
             </NavContainer>
-          </NavLink>
+          </StyledNavLink>
         </li>
       </StyledUl>
     </Nav>
@@ -54,4 +54,8 @@ const NavContainer = styled.div`
 
 const Span = styled.span`
   font-size: 0.6rem;
+`;
+
+const StyledNavLink = styled(NavLink)`
+  color: ${({isActive}) => (isActive ? '#f77c00' : 'black')};
 `;
