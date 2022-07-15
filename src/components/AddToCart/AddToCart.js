@@ -10,7 +10,7 @@ export default function AddToCart({currentMenu}) {
     shoppingItems: state.shoppingItems,
     addShoppingItem: state.addShoppingItem,
   }));
-  console.log(currentMenu);
+
   function handleAddToCart(currentMenu) {
     const findItem = shoppingItems.find(item => item.name === currentMenu.name);
     if (!findItem) {
