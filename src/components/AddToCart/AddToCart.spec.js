@@ -2,6 +2,7 @@ import '@testing-library/jest-dom/extend-expect';
 import {render, screen} from '@testing-library/react';
 import {nanoid} from 'nanoid';
 import {MemoryRouter} from 'react-router-dom';
+
 import AddToCart from './AddToCart.js';
 
 const currentMenuData = {
