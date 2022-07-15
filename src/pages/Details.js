@@ -50,7 +50,6 @@ export default function Details({menusdata}) {
           </>
         )}
       </DetailPage>
-      <ScrollTop />
       <Navigation />
     </>
   );

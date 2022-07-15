@@ -3,28 +3,33 @@ import {MdMenuBook} from 'react-icons/md';
 import {NavLink} from 'react-router-dom';
 import styled from 'styled-components';
 
+import ScrollTop from '../ScrollTop/ScrollTop';
+
 export default function Navigation() {
   return (
-    <Nav>
-      <StyledUl>
-        <li>
-          <StyledNavLink to="/">
-            <NavContainer>
-              <MdMenuBook data-testid="menus-icon" />
-              <Span>Menus</Span>
-            </NavContainer>
-          </StyledNavLink>
-        </li>
-        <li>
-          <StyledNavLink to="/cart">
-            <NavContainer>
-              <FiShoppingCart data-testid="cart-icon" />
-              <Span>Cart</Span>
-            </NavContainer>
-          </StyledNavLink>
-        </li>
-      </StyledUl>
-    </Nav>
+    <>
+      <Nav>
+        <StyledUl>
+          <li>
+            <StyledNavLink to="/">
+              <NavContainer>
+                <MdMenuBook data-testid="menus-icon" />
+                <Span>Menus</Span>
+              </NavContainer>
+            </StyledNavLink>
+          </li>
+          <li>
+            <StyledNavLink to="/cart">
+              <NavContainer>
+                <FiShoppingCart data-testid="cart-icon" />
+                <Span>Cart</Span>
+              </NavContainer>
+            </StyledNavLink>
+          </li>
+        </StyledUl>
+        <ScrollTop />
+      </Nav>
+    </>
   );
 }
 

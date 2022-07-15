@@ -83,10 +83,11 @@ export default function ShoppingCart() {
           </SumContainer>
         </>
       )}
-      <ScrollTop />
+
       <ToastContainer />
 
       <Navigation />
+      <ScrollTop />
     </Main>
   );
 }
