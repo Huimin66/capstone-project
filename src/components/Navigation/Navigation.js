@@ -57,5 +57,8 @@ const Span = styled.span`
 `;
 
 const StyledNavLink = styled(NavLink)`
-  color: ${({isActive}) => (isActive ? '#f77c00' : 'black')};
+  color: black;
+  &.active {
+    color: #f77c00;
+  }
 `;
