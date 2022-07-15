@@ -165,8 +165,6 @@ const SumContainer = styled.div`
 `;
 
 const Message = styled.div`
-  width: 100%;
   font-size: 1.2rem;
   padding: 2rem;
-  margin: 0 auto;
 `;
