@@ -1,5 +1,3 @@
-import {toast} from 'react-toastify';
-
 /* Get categories form the given menus */
 export function getAlternativeCategorie(menus) {
   const categories = ['All'];

@@ -1,3 +1,5 @@
+import {MemoryRouter} from 'react-router-dom';
+
 import menusdata from '../../data.js';
 import ShowMenus from '../ShowMenus/ShowMenus';
 
@@ -6,10 +8,14 @@ export default {
   component: ShowMenus,
 };
 
-const Template = args => <ShowMenus {...args} />;
+const Template = args => (
+  <MemoryRouter>
+    <ShowMenus {...args} />
+  </MemoryRouter>
+);
 
 export const Default = Template.bind({});
 Default.args = {
   menus: menusdata,
-  curClickedCategory: 'All',
+  currentClickedCategory: 'All',
 };
