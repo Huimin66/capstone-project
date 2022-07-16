@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import AddToCart from '../components/AddToCart/AddToCart';
 import BackToPreviousPage from '../components/BackToPreviousPage/BackToPreviousPage';
 import Navigation from '../components/Navigation/Navigation';
-import ScrollTop from '../components/ScrollTop/ScrollTop.js';
 
 export default function Details({menusdata}) {
   const params = useParams();

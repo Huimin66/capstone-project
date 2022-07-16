@@ -7,7 +7,6 @@ import styled from 'styled-components';
 
 import BackToPreviousPages from '../components/BackToPreviousPage/BackToPreviousPage.js';
 import Navigation from '../components/Navigation/Navigation.js';
-import ScrollTop from '../components/ScrollTop/ScrollTop.js';
 import useStore from '../hooks/useStore.js';
 
 export default function ShoppingCart() {
