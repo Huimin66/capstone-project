@@ -15,6 +15,5 @@
   ],
 
   "public": true,
-  "src": "api/payment.js",
   "config": {"zeroConfig": true}
 }
