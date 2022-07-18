@@ -46,7 +46,7 @@ export default function ShoppingCart() {
       'Content-Type': 'application/json',
     };
     try {
-      const response = await fetch('http://localhost:5005/payment', {
+      const response = await fetch('http://localhost:5005/api/payment', {
         method: 'POST',
         headers,
         body: JSON.stringify(body),
