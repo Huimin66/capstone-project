@@ -44,10 +44,10 @@ const Category = styled.span`
   border-bottom: 1px solid #ababab;
   writing-mode: vertical-lr;
   text-orientation: upright;
-  text-shadow: 0 0 0.1em #036;
+  text-shadow: 0 0 0.1em var(--third-color);
   &:nth-last-child(1) {
     border-bottom: none;
   }
 
-  background-color: ${({active}) => (active ? '#f77c00' : '#f7f7f7')};
+  background-color: ${({active}) => (active ? 'var(--secondary-color)' : '#f7f7f7')};
 `;

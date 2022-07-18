@@ -28,3 +28,11 @@ export function getCategoriesAndSort(menus, sortBy) {
   const sortedCategories = categories.sort((a, b) => sortByObj[a] - sortByObj[b]);
   return sortedCategories;
 }
+
+export function orderNumber() {
+  let now = Date.now().toString();
+  // pad with extra random digit
+  now += now + Math.floor(Math.random() * 10);
+  // format
+  return [now.slice(0, 4), now.slice(4, 10), now.slice(10, 14)].join('');
+}

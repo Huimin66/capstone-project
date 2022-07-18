@@ -1,3 +1,4 @@
+import {BsBagCheck} from 'react-icons/bs';
 import {FiShoppingCart} from 'react-icons/fi';
 import {MdMenuBook} from 'react-icons/md';
 import {NavLink} from 'react-router-dom';
@@ -23,6 +24,14 @@ export default function Navigation() {
               <NavContainer>
                 <FiShoppingCart data-testid="cart-icon" />
                 <Span>Cart</Span>
+              </NavContainer>
+            </StyledNavLink>
+          </li>
+          <li>
+            <StyledNavLink to="/order">
+              <NavContainer>
+                <BsBagCheck data-testid="order-icon" />
+                <Span>Orders</Span>
               </NavContainer>
             </StyledNavLink>
           </li>
@@ -55,6 +64,7 @@ const NavContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 0.1rem;
 `;
 
 const Span = styled.span`
@@ -64,6 +74,6 @@ const Span = styled.span`
 const StyledNavLink = styled(NavLink)`
   color: black;
   &.active {
-    color: #f77c00;
+    color: var(--secondary-color);
   }
 `;

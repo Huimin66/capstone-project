@@ -52,7 +52,7 @@ const MenuImg = styled.img`
 
 const MenuNamePriceContainer = styled.div`
   width: 100%;
-  color: #036;
+  color: var(--third-color);
   margin: auto;
   display: grid;
   grid-template-columns: 5fr 1fr;

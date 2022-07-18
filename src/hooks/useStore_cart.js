@@ -28,8 +28,13 @@ const shoppingItemsStore = set => ({
       ),
     }));
   },
+  clearShoppingCart: () => {
+    set(() => ({
+      shoppingItems: [],
+    }));
+  },
 });
 
-const useStore = create(persist(shoppingItemsStore, {name: 'shoppingItems'}));
+const useStoreCart = create(persist(shoppingItemsStore, {name: 'shoppingItems'}));
 
-export default useStore;
+export default useStoreCart;
