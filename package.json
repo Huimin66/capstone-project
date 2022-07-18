@@ -29,6 +29,7 @@
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-icons": "^4.4.0",
+    "react-router-dom": "^6.3.0",
     "react-stripe-checkout": "^2.6.3",
     "react-toastify": "^9.0.5",
     "styled-components": "^5.3.5",
@@ -70,7 +71,7 @@
     "stylelint-config-standard": "^22.0.0",
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-processor-styled-components": "^1.10.0",
-    "vercel": "^25.1.0"
+    "vercel": "^25.2.3"
   },
   "overrides": {
     "react-refresh": "0.11.0"

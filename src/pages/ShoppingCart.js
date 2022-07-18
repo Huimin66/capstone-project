@@ -25,7 +25,8 @@ export default function ShoppingCart() {
     orderItems: shoppingItems,
   });
 
-  const [setCallWaiter] = useState(false);
+  /* eslint-disable-next-line  */
+  const [callWaiter, setCallWaiter] = useState(false);
 
   const {addOrderItem} = useStoreOrder(state => ({
     addOrderItem: state.addOrderItem,
