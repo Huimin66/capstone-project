@@ -15,7 +15,6 @@
   ],
 
   "public": true,
-  "use": "@vercel/node@latest",
   "src": "api/payment.js",
   "config": {"zeroConfig": true}
 }
