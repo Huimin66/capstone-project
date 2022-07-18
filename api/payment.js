@@ -1,6 +1,8 @@
 import {v4 as uuidv4} from 'uuid';
 
-const stripe = require('stripe')(process.env.SECRET_KEY);
+import * as Stripe from 'stripe';
+
+const stripe = new Stripe(process.env.SECRET_KEY);
 
 const paymentHandler = async (request, response) => {
   const {order, token} = request.body;
