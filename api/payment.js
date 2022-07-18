@@ -1,6 +1,3 @@
-import cors from 'cors';
-require('dotenv').config();
-
 const stripe = require('stripe')(process.env.SECRET_KEY);
 import {v4 as uuidv4} from 'uuid';
 
