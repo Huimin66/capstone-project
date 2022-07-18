@@ -1,9 +1,11 @@
-const stripe = require('stripe')(process.env.SECRET_KEY);
 import {v4 as uuidv4} from 'uuid';
+
+const stripe = require('stripe')(process.env.SECRET_KEY);
 
 const paymentHandler = async (request, response) => {
   const {order, token} = request.body;
   const idempotencyKey = uuidv4();
+  const {method} = request;
 
   if (method === 'POST') {
     return stripe.customers
@@ -23,7 +25,7 @@ const paymentHandler = async (request, response) => {
           {idempotencyKey}
         );
       })
-      .then(result => res.status(200).json(result))
+      .then(result => response.status(200).json(result))
       .catch(error => response.status(400).json(error));
   }
 };
