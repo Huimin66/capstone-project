@@ -1,6 +1,6 @@
 import {v4 as uuidv4} from 'uuid';
 
-import * as Stripe from 'stripe';
+import Stripe from 'stripe';
 
 const stripe = new Stripe(process.env.SECRET_KEY);
 
