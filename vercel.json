@@ -12,8 +12,5 @@
         }
       ]
     }
-  ],
-
-  "public": true,
-  "config": {"zeroConfig": true}
+  ]
 }
