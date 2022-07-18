@@ -25,9 +25,6 @@ export default function ShoppingCart() {
     orderItems: shoppingItems,
   });
 
-  /* eslint-disable-next-line  */
-  const [callWaiter, setCallWaiter] = useState(false);
-
   const {addOrderItem} = useStoreOrder(state => ({
     addOrderItem: state.addOrderItem,
   }));
@@ -75,7 +72,6 @@ export default function ShoppingCart() {
       closeButton: true,
       position: toast.POSITION.TOP_CENTER,
     });
-    setCallWaiter(true);
   }
 
   return (
