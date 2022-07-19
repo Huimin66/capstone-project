@@ -16,7 +16,7 @@ const HeaderContainer = styled.div`
   top: 0;
   left: 0;
   font-size: 2rem;
-  font-family: Arial Black, Arial;
+  font-family: Arial Black, sans-serif;
   color: var(--secondary-color);
   filter: drop-shadow(3px 3px 2px #000);
   font-weight: 700;
