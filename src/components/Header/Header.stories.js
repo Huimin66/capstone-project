@@ -5,13 +5,7 @@ import Header from './Header.js';
 export default {
   title: 'Components/Header',
   component: Header,
-  decorators: [
-    Story => (
-      <MemoryRouter>
-        <Story />
-      </MemoryRouter>
-    ),
-  ],
+  decorators: [Story => <Story />],
 };
 
 const Template = args => <Header />;

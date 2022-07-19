@@ -1,5 +1,4 @@
 import {nanoid} from 'nanoid';
-import {MemoryRouter} from 'react-router-dom';
 
 import AddToCart from './AddToCart';
 
@@ -37,13 +36,7 @@ const currentMenu = {
 export default {
   title: 'Components/AddToCart',
   component: AddToCart,
-  decorators: [
-    Story => (
-      <MemoryRouter>
-        <Story />
-      </MemoryRouter>
-    ),
-  ],
+  decorators: [Story => <Story />],
 };
 
 const Template = args => <AddToCart {...args} />;

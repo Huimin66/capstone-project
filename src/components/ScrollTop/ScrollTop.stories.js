@@ -1,5 +1,3 @@
-import {MemoryRouter} from 'react-router-dom';
-
 import ScrollTop from './ScrollTop';
 
 export default {
@@ -7,11 +5,7 @@ export default {
   component: ScrollTop,
 };
 
-const Template = args => (
-  <MemoryRouter>
-    <ScrollTop />
-  </MemoryRouter>
-);
+const Template = args => <ScrollTop />;
 
 export const Default = Template.bind({});
 Default.args = {};

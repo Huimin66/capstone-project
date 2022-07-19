@@ -1,5 +1,3 @@
-import {MemoryRouter} from 'react-router-dom';
-
 import menusdata from '../../data.js';
 import ShowMenus from '../ShowMenus/ShowMenus';
 
@@ -8,11 +6,7 @@ export default {
   component: ShowMenus,
 };
 
-const Template = args => (
-  <MemoryRouter>
-    <ShowMenus {...args} />
-  </MemoryRouter>
-);
+const Template = args => <ShowMenus {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

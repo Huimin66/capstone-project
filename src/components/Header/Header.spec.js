@@ -6,11 +6,7 @@ import Header from './Header.js';
 
 describe('Header', () => {
   it('find header in the page', () => {
-    render(
-      <MemoryRouter>
-        <Header />
-      </MemoryRouter>
-    );
+    render(<Header />);
 
     expect(screen.getByText('JOYFEEL WOK')).toBeInTheDocument();
   });
