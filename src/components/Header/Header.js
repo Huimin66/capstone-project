@@ -18,11 +18,12 @@ const HeaderContainer = styled.div`
   font-size: 2rem;
   font-family: Arial Black, sans-serif;
   color: var(--secondary-color);
-  filter: drop-shadow(3px 3px 2px #000);
+  filter: drop-shadow(3px 3px 2px #ccc);
   font-weight: 700;
-  z-index: -1;
   display: flex;
   justify-content: center;
   align-items: center;
   border-bottom: 1px solid #f7f7f7;
+  background-color: #d2ddd9;
+  text-shadow: 0.1em 0.1em #c0c0c0;
 `;
