@@ -16,9 +16,9 @@ const HeaderContainer = styled.div`
   top: 0;
   left: 0;
   font-size: 2rem;
-  font-family: Arial Black;
+  font-family: Arial Black, Arial;
   color: var(--secondary-color);
-  filter: drop-shadow(3px 3px 2px #000000);
+  filter: drop-shadow(3px 3px 2px #000);
   font-weight: 700;
   z-index: -1;
   display: flex;
