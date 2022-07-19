@@ -7,6 +7,7 @@ import {ToastContainer, toast} from 'react-toastify';
 import styled from 'styled-components';
 
 import BackToPreviousPages from '../components/BackToPreviousPage/BackToPreviousPage.js';
+import Header from '../components/Header/Header.js';
 import Navigation from '../components/Navigation/Navigation.js';
 import ShoppingItems from '../components/ShoppingItems/ShoppingItems.js';
 import useStoreCart from '../hooks/useStore_cart';
@@ -75,52 +76,56 @@ export default function ShoppingCart() {
   }
 
   return (
-    <Main>
-      <BackAndTitle>
-        <BackToPreviousPages />
-        <h1>Shopping Cart</h1>
-      </BackAndTitle>
+    <>
+      <Header />
+      <Main>
+        <BackAndTitle>
+          <BackToPreviousPages />
+          <h1>SHOPPING CART</h1>
+        </BackAndTitle>
 
-      {shoppingItems.length === 0 ? (
-        <Message>Your shopping cart is empty!</Message>
-      ) : (
-        <>
-          <ShoppingItems shoppingItems={shoppingItems} />
-          <SumContainer>
-            Subtotal:
-            {subtotal().toFixed(2)} €
-          </SumContainer>
-          <Payments>
-            {/* Testing in Germany with card nummber: 4000002760000016 */}
-            <StripeCheckout
-              stripeKey={process.env.REACT_APP_KEY}
-              token={makePayment}
-              name="pay bill"
-              amount={order.price * 100}
-            >
-              <Checkout>Pay Online</Checkout>
-            </StripeCheckout>
-            <Checkout onClick={handleCallWaiter}>Call waiter to pay</Checkout>
-          </Payments>
-        </>
-      )}
-      <ToastContainer />
-      <Navigation />
-    </Main>
+        {shoppingItems.length === 0 ? (
+          <SpeechBubble>Your shopping cart is empty!</SpeechBubble>
+        ) : (
+          <>
+            <ShoppingItems shoppingItems={shoppingItems} />
+            <SumContainer>
+              Subtotal:
+              {subtotal().toFixed(2)} €
+            </SumContainer>
+            <Payments>
+              {/* Testing in Germany with card nummber: 4000002760000016 */}
+              <StripeCheckout
+                stripeKey={process.env.REACT_APP_KEY}
+                token={makePayment}
+                name="pay bill"
+                amount={order.price * 100}
+              >
+                <Checkout>Pay Online</Checkout>
+              </StripeCheckout>
+              <Checkout onClick={handleCallWaiter}>Call waiter to pay</Checkout>
+            </Payments>
+          </>
+        )}
+        <ToastContainer />
+        <Navigation />
+      </Main>
+    </>
   );
 }
 
 const Main = styled.main`
   width: 100%;
-  padding-bottom: 4rem;
+  padding: 3rem 0;
   color: var(--third-color);
 `;
 
 const BackAndTitle = styled.div`
-  margin: 1rem;
+  margin: 1.5rem 1rem 0 1rem;
   display: flex;
   align-items: center;
   gap: 1rem;
+  font-size: 0.7rem;
 `;
 
 const SumContainer = styled.div`
@@ -134,9 +139,27 @@ const SumContainer = styled.div`
   margin: 0 1rem;
 `;
 
-const Message = styled.div`
+const SpeechBubble = styled.div`
+  margin: 2rem auto;
+  width: 70%;
+  position: relative;
+  border-radius: 6px;
+  padding: 1rem;
   font-size: 1.2rem;
-  padding: 2rem;
+  background-color: white;
+  color: var(--third-color);
+  font-weight: 700;
+  &::after {
+    color: white;
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 20px;
+    border-top: 20px solid white;
+    border-top-color: inherit;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+  }
 `;
 
 const Payments = styled.div`
