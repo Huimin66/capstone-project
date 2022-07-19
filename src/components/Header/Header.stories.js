@@ -1,5 +1,3 @@
-import {MemoryRouter} from 'react-router-dom';
-
 import Header from './Header.js';
 
 export default {
