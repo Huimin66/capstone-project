@@ -1,5 +1,4 @@
 import {nanoid} from 'nanoid';
-import {MemoryRouter} from 'react-router-dom';
 
 import ShoppingItems from './ShoppingItems.js';
 
@@ -16,13 +15,7 @@ const shoppingItems = [
 export default {
   title: 'Components/ShoppingItems',
   component: ShoppingItems,
-  decorators: [
-    Story => (
-      <MemoryRouter>
-        <Story />
-      </MemoryRouter>
-    ),
-  ],
+  decorators: [Story => <Story />],
 };
 
 const Template = args => <ShoppingItems {...args} />;

@@ -1,5 +1,3 @@
-import {MemoryRouter} from 'react-router-dom';
-
 import BackToPreviousPage from './BackToPreviousPage';
 
 export default {
@@ -7,11 +5,7 @@ export default {
   component: BackToPreviousPage,
 };
 
-const Template = args => (
-  <MemoryRouter>
-    <BackToPreviousPage />
-  </MemoryRouter>
-);
+const Template = args => <BackToPreviousPage />;
 
 export const Default = Template.bind({});
 Default.args = {};

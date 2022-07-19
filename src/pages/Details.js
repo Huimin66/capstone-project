@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import AddToCart from '../components/AddToCart/AddToCart';
 import BackToPreviousPage from '../components/BackToPreviousPage/BackToPreviousPage';
+import Header from '../components/Header/Header.js';
 import Navigation from '../components/Navigation/Navigation';
 
 export default function Details({menusdata}) {
@@ -10,6 +11,7 @@ export default function Details({menusdata}) {
   const currentMenu = menusdata?.find(menu => menu.id === params.id);
   return (
     <>
+      <Header />
       <DetailPage>
         <BackAndTitle>
           <BackToPreviousPage />
@@ -56,15 +58,14 @@ export default function Details({menusdata}) {
 
 const DetailPage = styled.main`
   max-width: 600px;
-  padding: 1rem;
+  margin: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   gap: 0.5rem;
-  background-color: var(--primary-color);
   color: var(--third-color);
-  padding-bottom: 3rem;
+  padding: 3rem 0;
 `;
 const Title = styled.h1`
   font-size: 1.8rem;

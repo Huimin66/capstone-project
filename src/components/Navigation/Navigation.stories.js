@@ -1,5 +1,3 @@
-import {MemoryRouter} from 'react-router-dom';
-
 import Navigation from './Navigation';
 
 export default {
@@ -7,11 +5,7 @@ export default {
   component: Navigation,
 };
 
-const Template = args => (
-  <MemoryRouter>
-    <Navigation />
-  </MemoryRouter>
-);
+const Template = args => <Navigation />;
 
 export const Default = Template.bind({});
 Default.args = {};
