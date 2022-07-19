@@ -102,6 +102,7 @@ const SpeechBubble = styled.div`
   font-size: 1.2rem;
   background-color: white;
   color: var(--third-color);
+  z-index: -1;
   &::after {
     color: white;
     content: '';
@@ -113,5 +114,4 @@ const SpeechBubble = styled.div`
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
   }
-  z-index: -1;
 `;
