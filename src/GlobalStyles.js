@@ -8,6 +8,13 @@ export default styled.createGlobalStyle`
     box-sizing: border-box;
   }
 
+  :root {
+    --primary-color: #dfdfe7;
+    --primary-light-color: #efefef;
+    --secondary-color: #f77c00;
+    --third-color: #036;
+  }
+
   html {
     scroll-behavior: smooth;
   }
@@ -17,7 +24,7 @@ export default styled.createGlobalStyle`
     height: 100vh;
     font-family: sans-serif;
     max-width: 600px;
-    background-color: #dfdfe7;
+    background-color: var(--primary-color);
   }
 
   ul,

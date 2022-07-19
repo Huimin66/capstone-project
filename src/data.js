@@ -3,7 +3,7 @@ import {nanoid} from 'nanoid';
 const menusdata = [
   {
     id: nanoid(),
-    name: 'Kung Pao chicken',
+    name: 'Kung Pao Chicken',
     image: 'https://res.cloudinary.com/ddbcljw3g/image/upload/v1656491336/menu/Kung-Pao-chicken_owdyqj.jpg',
     price: 9.9,
     category: 'Mains',

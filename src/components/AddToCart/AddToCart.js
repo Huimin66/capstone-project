@@ -3,10 +3,10 @@ import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import styled from 'styled-components';
 
-import useStore from '../../hooks/useStore.js';
+import useStoreCart from '../../hooks/useStore_cart.js';
 
 export default function AddToCart({currentMenu}) {
-  const {shoppingItems, addShoppingItem} = useStore(state => ({
+  const {shoppingItems, addShoppingItem} = useStoreCart(state => ({
     shoppingItems: state.shoppingItems,
     addShoppingItem: state.addShoppingItem,
   }));
@@ -51,7 +51,7 @@ const AddToCartContainer = styled.div`
 `;
 const Span = styled.span`
   font-size: 1.4rem;
-  background-color: #efefef;
+  background-color: var(--primary-light-color);
   text-align: center;
   line-height: 3rem;
   border-radius: 5px;
@@ -59,7 +59,7 @@ const Span = styled.span`
 
 const Button = styled.button`
   color: white;
-  background-color: #f77c00;
+  background-color: var(--secondary-color);
   border: none;
   border-radius: 5px;
 `;

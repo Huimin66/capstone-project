@@ -7,7 +7,7 @@ import Navigation from '../components/Navigation/Navigation';
 
 export default function Details({menusdata}) {
   const params = useParams();
-  const currentMenu = menusdata.find(menu => menu.id === params.id);
+  const currentMenu = menusdata?.find(menu => menu.id === params.id);
   return (
     <>
       <DetailPage>
@@ -62,8 +62,8 @@ const DetailPage = styled.main`
   justify-content: flex-start;
   align-items: flex-start;
   gap: 0.5rem;
-  background-color: #dfdfe7;
-  color: #036;
+  background-color: var(--primary-color);
+  color: var(--third-color);
   padding-bottom: 3rem;
 `;
 const Title = styled.h1`
@@ -94,7 +94,7 @@ const Section = styled.section`
   width: 100%;
   padding: 1rem;
   border-radius: 5px;
-  background-color: #efefef;
+  background-color: var(--primary-light-color);
 `;
 
 const ReviewImg = styled.img`
@@ -105,4 +105,5 @@ const ReviewImg = styled.img`
 const SingelReview = styled.div`
   width: 100%;
   border-bottom: 1px solid #d3d3d3;
+  margin: 0.8rem 0;
 `;
