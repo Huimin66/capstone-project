@@ -1,3 +1,4 @@
+import {AiOutlineHome} from 'react-icons/ai';
 import {BsBagCheck} from 'react-icons/bs';
 import {FiShoppingCart} from 'react-icons/fi';
 import {MdMenuBook} from 'react-icons/md';
@@ -12,7 +13,15 @@ export default function Navigation() {
       <Nav>
         <StyledUl>
           <li>
-            <StyledNavLink to="/">
+            <StyledNavLink to="/home">
+              <NavContainer>
+                <AiOutlineHome data-testid="home-icon" />
+                <Span>Home</Span>
+              </NavContainer>
+            </StyledNavLink>
+          </li>
+          <li>
+            <StyledNavLink to="/menus">
               <NavContainer>
                 <MdMenuBook data-testid="menus-icon" />
                 <Span>Menus</Span>
@@ -48,11 +57,11 @@ const Nav = styled.nav`
   position: fixed;
   bottom: 0;
   left: 0;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
 `;
 const StyledUl = styled.ul`
   border-top: 1px solid #ccc;
-  height: 3rem;
+  height: 3.5rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
