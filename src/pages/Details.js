@@ -41,11 +41,11 @@ export default function Details({menusdata}) {
               <Section>
                 <H2>Spiciness:</H2>
 
-                <Pepper spiciness={currentMenu.spiciness}>
+                <div spiciness={currentMenu.spiciness}>
                   {actives.map((active, index) => {
                     return <FaPepperHot key={index} style={active ? {color: 'red'} : {fill: 'grey'}} />;
                   })}
-                </Pepper>
+                </div>
               </Section>
             </DesContainer>
             <Section>
@@ -128,11 +128,6 @@ const SingelReview = styled.div`
   width: 100%;
   padding: 0.5rem;
   border-bottom: 1px solid #d3d3d3;
-`;
-const Pepper = styled.div`
-  &{Pepper}:nth-child(-n + ${props => props.spiciness}) {
-    color: red;
-  }
 `;
 
 const H2 = styled.h2`
