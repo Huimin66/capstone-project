@@ -50,9 +50,8 @@ const HomeContainer = styled.div`
   background-image: url('https://images.unsplash.com/photo-1511910849309-0dffb8785146?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80');
   background-repeat: no-repeat;
   background-size: 100% 100%;
-
   font-size: 1.6rem;
-  font-family: Helvetica;
+  font-family: Helvetica, serif;
   display: flex;
   flex-direction: column;
   position: relative;
