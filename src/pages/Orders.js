@@ -33,8 +33,8 @@ export default function Orders() {
       ) : (
         <>
           <SpeechBubbleTipps>
-            You have not login. After login, you can receive messages of coupons and new dishes, reserve tables, view
-            history orders, etc...
+            You have not logged in. After login, you can receive messages of coupons and new dishes, reserve tables,
+            view history orders, etc...
           </SpeechBubbleTipps>
         </>
       )}

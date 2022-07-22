@@ -148,7 +148,6 @@ const SpeechBubble = styled.div`
   font-size: 1.2rem;
   background-color: white;
   color: var(--third-color);
-  font-weight: 700;
   &::after {
     color: white;
     content: '';
