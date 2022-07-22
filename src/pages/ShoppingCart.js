@@ -160,6 +160,7 @@ const SpeechBubble = styled.div`
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
   }
+  font-family: Arial, Helvetica;
 `;
 
 const Payments = styled.div`
