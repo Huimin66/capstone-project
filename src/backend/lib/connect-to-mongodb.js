@@ -6,11 +6,6 @@ if (!MONGODB_URI) {
   throw new Error('MONGODB_URI is undefined');
 }
 
-/**
- * Global is used here to maintain a cached connection across hot reloads
- * in development. This prevents connections growing exponentially
- * during API Route usage.
- */
 let cached = global.mongoose;
 
 if (!cached) {
