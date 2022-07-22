@@ -27,17 +27,21 @@ export default function Login() {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(inputCredentials),
-    }); /*. then(async response => {
-      const data = await response.json();
+    })
+      .then(async response => {
+        const data = await response.json();
 
-      if (!response.ok) {
-        return new Error('Data coud not be fetched!');
-      }
+        if (!response.ok) {
+          return new Error('Data coud not be fetched!');
+        }
 
-      setToken(data);
-      setCredentials(event.target.elements.username.value, event.target.elements.password.value);
-      navigate('/menus');
-    }); */
+        setToken(data);
+        setCredentials(event.target.elements.username.value, event.target.elements.password.value);
+        navigate('/menus');
+      })
+      .catch(error => {
+        console.error('There was an error!', error);
+      });
   }
 
   function handleChange(event) {
