@@ -140,6 +140,7 @@ const SpeechBubble = css`
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
   }
+
   font-family: Arial, Helvetica;
 `;
 

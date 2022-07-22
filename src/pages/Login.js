@@ -39,10 +39,8 @@ export default function Login() {
         navigate('/menus');
       })
       .catch(error => {
-        this.setState({errorMessage: error.toString()});
         console.error('There was an error!', error);
-      })
-      .catch(error => console.log(error));
+      });
   }
 
   function handleChange(event) {
@@ -94,7 +92,7 @@ const LoginForm = styled.form`
   background-color: white;
   border-radius: 8px;
   padding: 2rem;
-  box-shadow: 2px 2px #888888;
+  box-shadow: 2px 2px #888;
 `;
 const Title = styled.h1`
   margin: 0 auto;
