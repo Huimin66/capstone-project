@@ -8,8 +8,7 @@ export default function Home() {
   const navigate = useNavigate();
 
   function handleLogin() {
-    /* login will be implemented in next user story, update this when work on login page */
-    /* navigate('/login'); */
+    navigate('/login');
   }
 
   return (
