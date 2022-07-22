@@ -1,3 +1,4 @@
+import {FaPepperHot} from 'react-icons/fa';
 import {useParams} from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -9,6 +10,11 @@ import Navigation from '../components/Navigation/Navigation';
 export default function Details({menusdata}) {
   const params = useParams();
   const currentMenu = menusdata?.find(menu => menu.id === params.id);
+
+  function calculatePeppers(spicinessValue) {
+    return [false, false, false, false, false].map((_, index) => spicinessValue > index);
+  }
+
   return (
     <>
       <Header />
@@ -23,20 +29,25 @@ export default function Details({menusdata}) {
           <>
             <DesContainer>
               <Section>
-                <h2>Taste: </h2>
+                <H2>Taste: </H2>
                 {currentMenu.taste}
               </Section>
               <Section>
-                <h2>Spiciness:</h2>
-                {currentMenu.spiciness} / 5
+                <H2>Spiciness:</H2>
+
+                <div spiciness={currentMenu.spiciness}>
+                  {calculatePeppers(currentMenu.spiciness).map((active, index) => {
+                    return <FaPepperHot key={index} style={active ? {color: 'red'} : {fill: 'grey'}} />;
+                  })}
+                </div>
               </Section>
             </DesContainer>
             <Section>
-              <h2>Ingredients:</h2>
+              <H2>Ingredients:</H2>
               <div>{currentMenu.ingredients}</div>
             </Section>
             <Section>
-              <h2>Review:</h2>
+              <H2>Review:</H2>
               {currentMenu.reviews.map(review => {
                 return (
                   <SingelReview key={review.id}>
@@ -96,6 +107,10 @@ const Section = styled.section`
   padding: 1rem;
   border-radius: 5px;
   background-color: var(--primary-light-color);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 1.1rem;
 `;
 
 const ReviewImg = styled.img`
@@ -105,6 +120,10 @@ const ReviewImg = styled.img`
 
 const SingelReview = styled.div`
   width: 100%;
+  padding: 0.5rem;
   border-bottom: 1px solid #d3d3d3;
-  margin: 0.8rem 0;
+`;
+
+const H2 = styled.h2`
+  font-size: 1.2rem;
 `;
