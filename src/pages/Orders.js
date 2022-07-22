@@ -141,7 +141,7 @@ const SpeechBubble = css`
     border-right: 20px solid transparent;
   }
 
-  font-family: Arial, Helvetica;
+  font-family: Arial, Helvetica, sans-serif;
 `;
 
 const UserComponent = styled.div`
@@ -153,7 +153,7 @@ const UserComponent = styled.div`
   padding: 1rem;
   color: var(--third-color);
   font-size: 1.2rem;
-  font-family: Optima, Gill Sans, Helvetica, Arial;
+  font-family: Optima, Gill Sans, Helvetica, Arial, sans-serif;
   font-weight: 700;
 `;
 
@@ -177,6 +177,6 @@ const SpeechBubbleTipps = styled.div`
 
 const SpeechBubbleNologin = styled.div`
   ${SpeechBubble}
-  font-family: Arial, Helvetica;
+  font-family: Arial, Helvetica,sans-serif;
   font-weight: 500;
 `;

@@ -34,6 +34,7 @@ export default function Login() {
         if (!response.ok) {
           return new Error('Data coud not be fetched!');
         }
+
         setToken(data);
         setCredentials(event.target.elements.username.value, event.target.elements.password.value);
         navigate('/menus');
@@ -94,6 +95,7 @@ const LoginForm = styled.form`
   padding: 2rem;
   box-shadow: 2px 2px #888;
 `;
+
 const Title = styled.h1`
   margin: 0 auto;
 `;
@@ -103,6 +105,7 @@ const Username = styled.div`
   flex-direction: column;
   gap: 0.5rem;
 `;
+
 const Password = styled.span`
   display: flex;
   flex-direction: column;
@@ -123,9 +126,11 @@ const LoginButton = styled.button`
   background: linear-gradient(90deg, #f77c00, orange);
   color: white;
 `;
+
 const SignUpTipps = styled.div`
   margin: 1rem auto;
 `;
+
 const Logos = styled.div`
   margin: 1rem auto;
   font-size: 2rem;
