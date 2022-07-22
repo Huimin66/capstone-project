@@ -114,7 +114,7 @@ const Password = styled.span`
 
 const Input = styled.input`
   border-bottom: 1px solid black;
-  &: focus {
+  &:focus {
     outline: none;
   }
 `;
