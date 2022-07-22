@@ -22,11 +22,10 @@ export default styled.createGlobalStyle`
   body {
     margin: 0;
     height: 100vh;
-    font-family: Arial, Helvetica;
+    font-family: sans-serif;
     max-width: 600px;
     background-image: url(https://res.cloudinary.com/ddbcljw3g/image/upload/v1657100856/dateil-background_w5a4yd.jpg);
     background-size: contain;
-    border: none;
   }
 
   ul,

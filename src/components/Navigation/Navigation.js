@@ -1,30 +1,18 @@
-import {AiOutlineHome} from 'react-icons/ai';
 import {BsBagCheck} from 'react-icons/bs';
 import {FiShoppingCart} from 'react-icons/fi';
 import {MdMenuBook} from 'react-icons/md';
-import {useLocation} from 'react-router';
 import {NavLink} from 'react-router-dom';
 import styled from 'styled-components';
 
 import ScrollTop from '../ScrollTop/ScrollTop';
 
 export default function Navigation() {
-  const location = useLocation();
-
   return (
     <>
       <Nav>
         <StyledUl>
           <li>
-            <StyledNavLink to="/home">
-              <NavContainer>
-                <AiOutlineHome data-testid="home-icon" />
-                <Span>Home</Span>
-              </NavContainer>
-            </StyledNavLink>
-          </li>
-          <li>
-            <StyledNavLink to="/menus">
+            <StyledNavLink to="/">
               <NavContainer>
                 <MdMenuBook data-testid="menus-icon" />
                 <Span>Menus</Span>
@@ -48,7 +36,7 @@ export default function Navigation() {
             </StyledNavLink>
           </li>
         </StyledUl>
-        <ScrollTop activeScrollTop={location.pathname === '/home' ? false : true} />
+        <ScrollTop />
       </Nav>
     </>
   );
@@ -60,11 +48,11 @@ const Nav = styled.nav`
   position: fixed;
   bottom: 0;
   left: 0;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
 `;
 const StyledUl = styled.ul`
   border-top: 1px solid #ccc;
-  height: 3.5rem;
+  height: 3rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
