@@ -7,10 +7,7 @@ import Navigation from '../components/Navigation/Navigation.js';
 export default function Home() {
   const navigate = useNavigate();
 
-  function handleLogin() {
-    /* login will be implemented in next user story, update this when work on login page */
-    /* navigate('/login'); */
-  }
+  function handleLogin() {}
 
   return (
     <>
