@@ -19,4 +19,5 @@ const ScrollTopContainer = styled.div`
   line-height: 1.5rem;
   border-radius: 50%;
   background-color: #fff;
+  display: ${props => (props.active ? 'block' : 'none')};
 `;

@@ -2,12 +2,15 @@ import {AiOutlineHome} from 'react-icons/ai';
 import {BsBagCheck} from 'react-icons/bs';
 import {FiShoppingCart} from 'react-icons/fi';
 import {MdMenuBook} from 'react-icons/md';
+import {useLocation} from 'react-router';
 import {NavLink} from 'react-router-dom';
 import styled from 'styled-components';
 
 import ScrollTop from '../ScrollTop/ScrollTop';
 
 export default function Navigation() {
+  const location = useLocation();
+
   return (
     <>
       <Nav>
@@ -45,7 +48,7 @@ export default function Navigation() {
             </StyledNavLink>
           </li>
         </StyledUl>
-        <ScrollTop />
+        <ScrollTop active={location.pathname === '/home' ? false : true} />
       </Nav>
     </>
   );
