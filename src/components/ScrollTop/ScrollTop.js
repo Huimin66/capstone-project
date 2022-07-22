@@ -1,13 +1,9 @@
 import {IoIosArrowUp} from 'react-icons/io';
 import styled from 'styled-components';
 
-export default function ScrollTop({activeScrollTop}) {
+export default function ScrollTop() {
   return (
-    <ScrollTopContainer
-      active={activeScrollTop}
-      className="scrolltop"
-      onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}
-    >
+    <ScrollTopContainer className="scrolltop" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
       <IoIosArrowUp data-testid="scroll-up" />
     </ScrollTopContainer>
   );
@@ -23,5 +19,4 @@ const ScrollTopContainer = styled.div`
   line-height: 1.5rem;
   border-radius: 50%;
   background-color: #fff;
-  display: ${props => (props.active ? 'block' : 'none')};
 `;
