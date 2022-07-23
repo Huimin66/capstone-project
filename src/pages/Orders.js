@@ -109,14 +109,14 @@ const IMG = styled.img`
 `;
 
 const Items = styled.div`
-  padding: 0.5rem;
+  padding: 0.3rem;
   display: grid;
-  grid-template-columns: 1fr 3fr 1fr 1fr;
-  gap: 1rem;
+  grid-template-columns: 2fr 5fr 1fr 2fr;
+  gap: 0.2rem;
   align-items: center;
   background-color: var(--primary-color);
   border-radius: 5px;
-  font-weight: 500;
+  font-weight: 400;
 `;
 
 const SpeechBubble = css`
