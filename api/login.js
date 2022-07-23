@@ -8,7 +8,7 @@ export default async function loginHandler(request, response) {
   const {username, password} = request.body;
 
   if (!(username && password)) {
-    return response.status(400).json('username and password required');
+    return response.status(400).json('Username and password required');
   }
 
   await connectToMongodb();
@@ -16,13 +16,13 @@ export default async function loginHandler(request, response) {
   const user = await User.findOne({username});
 
   if (!user) {
-    return response.status(400).json('user not exist');
+    return response.status(400).json('User name or password is wrong!');
   }
 
   const passwordMatch = bcrypt.compareSync(password, user.password);
 
   if (!passwordMatch) {
-    return response.status(400).json('password is wrong');
+    return response.status(400).json('User name or password is wrong!');
   }
 
   const token = createToken(user);

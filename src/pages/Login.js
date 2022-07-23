@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import useStoreLogin from '../hooks/useStore_login.js';
 
 export default function Login() {
+  const [errorMessage, setErrorMessage] = useState('');
   const [inputCredentials, setInputCredentials] = useState({
     username: '',
     password: '',
@@ -30,9 +31,9 @@ export default function Login() {
     })
       .then(async response => {
         const data = await response.json();
-
         if (!response.ok) {
-          return new Error('Data coud not be fetched!');
+          setErrorMessage(data);
+          return new Error('Data could not be fetched!');
         }
 
         setToken(data);
@@ -40,7 +41,7 @@ export default function Login() {
         navigate('/menus');
       })
       .catch(error => {
-        console.error('There was an error!', error);
+        setErrorMessage(error);
       });
   }
 
@@ -61,6 +62,7 @@ export default function Login() {
           Password
           <Input type="password" name="password" value={inputCredentials.password} onChange={handleChange} />
         </Password>
+        {errorMessage && <div style={{color: 'crimson'}}>{errorMessage}</div>}
         <LoginButton>LOGIN</LoginButton>
         <SignUpTipps>
           Or sign up Using
@@ -93,7 +95,6 @@ const LoginForm = styled.form`
   background-color: white;
   border-radius: 8px;
   padding: 2rem;
-  box-shadow: 2px 2px #888;
 `;
 
 const Title = styled.h1`
@@ -123,7 +124,7 @@ const LoginButton = styled.button`
   margin-top: 2rem;
   padding: 0.5rem;
   border-radius: 20px;
-  background: linear-gradient(90deg, #f77c00, orange);
+  background: #18453b;
   color: white;
 `;
 
