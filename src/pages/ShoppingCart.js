@@ -89,10 +89,10 @@ export default function ShoppingCart() {
         ) : (
           <>
             <ShoppingItems shoppingItems={shoppingItems} />
-            <SumContainer>
-              Subtotal:
-              {subtotal().toFixed(2)} €
-            </SumContainer>
+            <Sum>
+              <span>Subtotal:</span>
+              <span>{subtotal().toFixed(2)} €</span>
+            </Sum>
             <Payments>
               {/* Testing in Germany with card nummber: 4000002760000016 */}
               <StripeCheckout
@@ -107,7 +107,7 @@ export default function ShoppingCart() {
             </Payments>
           </>
         )}
-        <ToastContainer />
+        <ToastContainer toastStyle={{color: 'var(--secondary-color)'}} />
         <Navigation />
       </Main>
     </>
@@ -128,7 +128,7 @@ const BackAndTitle = styled.div`
   font-size: 0.7rem;
 `;
 
-const SumContainer = styled.div`
+const Sum = styled.div`
   height: 3rem;
   border-radius: 5px;
   font-size: 1.2rem;
@@ -137,14 +137,17 @@ const SumContainer = styled.div`
   text-align: center;
   line-height: 3rem;
   margin: 0 1rem;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
 `;
 
 const SpeechBubble = styled.div`
   margin: 2rem auto;
-  width: 70%;
+  width: 75%;
   position: relative;
   border-radius: 6px;
-  padding: 1rem;
+  padding: 0.8rem 1rem 1rem;
   font-size: 1.2rem;
   background-color: white;
   color: var(--third-color);

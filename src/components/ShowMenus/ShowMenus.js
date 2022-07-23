@@ -13,10 +13,9 @@ export default function ShowMenus({menus, currentClickedCategory}) {
           <Link key={menu.id} to={`/details/${String(menu.id)}`}>
             <Menu>
               <MenuImg src={menu.image} alt={menu.name} />
-              <MenuNamePriceContainer>
+              <MenuNameContainer>
                 <Menuname>{menu.name}</Menuname>
-                <Menuprice>{menu.price + '€'}</Menuprice>
-              </MenuNamePriceContainer>
+              </MenuNameContainer>
             </Menu>
           </Link>
         );
@@ -36,12 +35,14 @@ const MenusContainer = styled.ul`
 
 const Menu = styled.li`
   margin: 0 auto;
-  padding: 0.5rem;
+  padding: 0.4rem;
   background-color: #f7f7f7;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  gap: 0.8rem;
+  postion: relative;
 `;
 
 const MenuImg = styled.img`
@@ -50,20 +51,17 @@ const MenuImg = styled.img`
   height: auto;
 `;
 
-const MenuNamePriceContainer = styled.div`
+const MenuNameContainer = styled.div`
   width: 100%;
   color: var(--third-color);
-  margin: auto;
+  margin-bottom: 0.3rem;
   display: grid;
-  grid-template-columns: 5fr 1fr;
+  grid-template-columns: 1fr;
+  font-size: 1rem;
 `;
 
 const Menuname = styled.span`
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-`;
-
-const Menuprice = styled.span`
-  font-weight: 700;
 `;

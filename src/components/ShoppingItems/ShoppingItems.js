@@ -39,7 +39,7 @@ export default function ShoppingItems({shoppingItems}) {
             <RightContainer>
               <NamePriceContainer>
                 <span>{item.name}</span>
-                <span>{item.price}€</span>
+                <span>{item.price.toFixed(2)}€</span>
               </NamePriceContainer>
               <OperateContainer>
                 <Operater onClick={() => handleDecreaseQuality(item.id)}>
@@ -57,7 +57,7 @@ export default function ShoppingItems({shoppingItems}) {
           </ItemContainer>
         );
       })}
-      <ToastContainer />
+      <ToastContainer toastStyle={{color: 'var(--secondary-color)'}} />
     </ItemsContainer>
   );
 }

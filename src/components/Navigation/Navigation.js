@@ -12,45 +12,43 @@ export default function Navigation() {
   const location = useLocation();
 
   return (
-    <>
-      <Nav>
-        <StyledUl>
-          <li>
-            <StyledNavLink to="/home">
-              <NavContainer>
-                <AiOutlineHome data-testid="home-icon" />
-                <Span>Home</Span>
-              </NavContainer>
-            </StyledNavLink>
-          </li>
-          <li>
-            <StyledNavLink to="/menus">
-              <NavContainer>
-                <MdMenuBook data-testid="menus-icon" />
-                <Span>Menus</Span>
-              </NavContainer>
-            </StyledNavLink>
-          </li>
-          <li>
-            <StyledNavLink to="/cart">
-              <NavContainer>
-                <FiShoppingCart data-testid="cart-icon" />
-                <Span>Cart</Span>
-              </NavContainer>
-            </StyledNavLink>
-          </li>
-          <li>
-            <StyledNavLink to="/order">
-              <NavContainer>
-                <BsBagCheck data-testid="order-icon" />
-                <Span>Orders</Span>
-              </NavContainer>
-            </StyledNavLink>
-          </li>
-        </StyledUl>
-        <ScrollTop activeScrollTop={location.pathname === '/home' || location.pathname === '/' ? false : true} />
-      </Nav>
-    </>
+    <Nav>
+      <StyledUl>
+        <li>
+          <StyledNavLink to="/home">
+            <NavContainer>
+              <AiOutlineHome data-testid="home-icon" />
+              <Span>Home</Span>
+            </NavContainer>
+          </StyledNavLink>
+        </li>
+        <li>
+          <StyledNavLink to="/menus">
+            <NavContainer>
+              <MdMenuBook data-testid="menus-icon" />
+              <Span>Menus</Span>
+            </NavContainer>
+          </StyledNavLink>
+        </li>
+        <li>
+          <StyledNavLink to="/cart">
+            <NavContainer>
+              <FiShoppingCart data-testid="cart-icon" />
+              <Span>Cart</Span>
+            </NavContainer>
+          </StyledNavLink>
+        </li>
+        <li>
+          <StyledNavLink to="/order">
+            <NavContainer>
+              <BsBagCheck data-testid="order-icon" />
+              <Span>Orders</Span>
+            </NavContainer>
+          </StyledNavLink>
+        </li>
+      </StyledUl>
+      <ScrollTop activeScrollTop={location.pathname === '/home' || location.pathname === '/' ? false : true} />
+    </Nav>
   );
 }
 
@@ -59,7 +57,8 @@ const Nav = styled.nav`
   width: 100%;
   position: fixed;
   bottom: 0;
-  left: 0;
+  margin: auto;
+  margin: 0 auto;
   font-size: 1.6rem;
 `;
 const StyledUl = styled.ul`

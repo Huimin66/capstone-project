@@ -15,12 +15,12 @@ export default styled.createGlobalStyle`
     --third-color: #036;
   }
 
-  html {
+  /*   html {
     scroll-behavior: smooth;
   }
-
+ */
   body {
-    margin: 0;
+    margin: auto;
     height: 100vh;
     font-family: Arial, Helvetica;
     max-width: 600px;

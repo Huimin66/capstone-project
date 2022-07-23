@@ -38,7 +38,6 @@ const CategoriesContainer = styled.div`
 `;
 
 const Category = styled.span`
-  border-radius: 5px;
   width: 100%;
   padding: 0.8rem;
   border-bottom: 1px solid #ababab;
@@ -50,4 +49,5 @@ const Category = styled.span`
   }
 
   background-color: ${({active}) => (active ? 'var(--secondary-color)' : '#f7f7f7')};
+  cursor: default;
 `;
