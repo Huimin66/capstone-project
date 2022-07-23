@@ -16,13 +16,13 @@ export default async function loginHandler(request, response) {
   const user = await User.findOne({username});
 
   if (!user) {
-    return response.status(400).json('User name or password is wrong!');
+    return response.status(400).json('User name is invalid!');
   }
 
   const passwordMatch = bcrypt.compareSync(password, user.password);
 
   if (!passwordMatch) {
-    return response.status(400).json('User name or password is wrong!');
+    return response.status(400).json('Password is invalid!');
   }
 
   const token = createToken(user);
