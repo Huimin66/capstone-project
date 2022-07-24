@@ -76,7 +76,7 @@ export default function ShoppingCart() {
   }
 
   return (
-    <>
+    <Page>
       <Header />
       <Main>
         <BackAndTitle>
@@ -110,9 +110,16 @@ export default function ShoppingCart() {
         <ToastContainer toastStyle={{color: 'var(--secondary-color)'}} />
         <Navigation />
       </Main>
-    </>
+    </Page>
   );
 }
+
+const Page = styled.div`
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+  overflow-y: scroll;
+`;
 
 const Main = styled.main`
   width: 100%;

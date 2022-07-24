@@ -15,10 +15,11 @@ export default styled.createGlobalStyle`
     --third-color: #036;
   }
 
-  /*   html {
+  html {
     scroll-behavior: smooth;
+    overflow: hidden;
   }
- */
+
   body {
     margin: auto;
     height: 100vh;
@@ -27,6 +28,7 @@ export default styled.createGlobalStyle`
     background-image: url(https://res.cloudinary.com/ddbcljw3g/image/upload/v1657100856/dateil-background_w5a4yd.jpg);
     background-size: contain;
     border: none;
+    overflow: hidden;
   }
 
   ul,
