@@ -42,7 +42,7 @@ const Menu = styled.li`
   flex-direction: column;
   gap: 0.5rem;
   gap: 0.8rem;
-  postion: relative;
+  position: relative;
 `;
 
 const MenuImg = styled.img`
