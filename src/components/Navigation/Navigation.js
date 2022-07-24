@@ -36,7 +36,7 @@ export default function Navigation() {
             </StyledNavLink>
           </li>
         </StyledUl>
-        <ScrollTop />
+        <ScrollTop activeScrollTop={location.pathname === '/home' || location.pathname === '/' ? false : true} />
       </Nav>
     </>
   );
