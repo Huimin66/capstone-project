@@ -13,14 +13,9 @@ export default function Details({menusdata}) {
   const currentMenu = menusdata?.find(menu => String(menu.id) === params.id);
   let actives = [false, false, false, false, false];
 
-  function setActive() {
-    for (let i = 0; i < currentMenu.spiciness; i++) {
-      if (currentMenu.spiciness < actives.length) {
-        actives[i] = true;
-      }
-    }
+  function calculatePeppers(spicinessValue) {
+    return [false, false, false, false, false].map((_, index) => spicinessValue > index);
   }
-  setActive();
 
   return (
     <Page>
@@ -43,7 +38,7 @@ export default function Details({menusdata}) {
                 <H2>Spiciness:</H2>
 
                 <div spiciness={currentMenu.spiciness}>
-                  {actives.map((active, index) => {
+                  {calculatePeppers(currentMenu.spiciness).map((active, index) => {
                     return <FaPepperHot key={index} style={active ? {color: 'red'} : {fill: 'grey'}} />;
                   })}
                 </div>
