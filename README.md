@@ -39,7 +39,7 @@ In my app, customers can
 Now I have not finished sign up page for customers, login only works with username: admin, password:admin. Login information is stored in MongoDB Atlas.
 
 <p align="center">
-<img src="public/img/login.png" width="20%" height="20%" alt="login" />
+<img src="public/img/login.png" width="30%" height="30%" alt="login" />
 </p>
 
 ### payment
@@ -53,7 +53,7 @@ For testing, you can use the following information to finish the payment.
 - CVC: any three numbers, like 123
 
 <p align="center">
-<img src="public/img/payment.png" width="20%" height="20%" alt="payment" />
+<img src="public/img/payment.png" width="30%" height="30%" alt="payment" />
 </p>
 
 ## Plans for the future
