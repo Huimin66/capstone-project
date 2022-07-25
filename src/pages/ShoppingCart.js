@@ -10,12 +10,12 @@ import BackToPreviousPages from '../components/BackToPreviousPage/BackToPrevious
 import Header from '../components/Header/Header.js';
 import Navigation from '../components/Navigation/Navigation.js';
 import ShoppingItems from '../components/ShoppingItems/ShoppingItems.js';
-import useStoreCart from '../hooks/useStore_cart';
-import useStoreOrder from '../hooks/useStore_order';
+import useCart from '../hooks/useCartStore';
+import useOrder from '../hooks/useOrderStore';
 import {orderNumber} from '../utils/utils.js';
 
 export default function ShoppingCart() {
-  const {shoppingItems, clearShoppingCart} = useStoreCart(state => ({
+  const {shoppingItems, clearShoppingCart} = useCart(state => ({
     shoppingItems: state.shoppingItems,
     clearShoppingCart: state.clearShoppingCart,
   }));
@@ -26,7 +26,7 @@ export default function ShoppingCart() {
     orderItems: shoppingItems,
   });
 
-  const {addOrderItem} = useStoreOrder(state => ({
+  const {addOrderItem} = useOrder(state => ({
     addOrderItem: state.addOrderItem,
   }));
 

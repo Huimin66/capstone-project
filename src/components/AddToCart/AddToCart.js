@@ -3,10 +3,10 @@ import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import styled from 'styled-components';
 
-import useStoreCart from '../../hooks/useStore_cart.js';
+import useCart from '../../hooks/useCartStore.js';
 
 export default function AddToCart({currentMenu}) {
-  const {shoppingItems, addShoppingItem} = useStoreCart(state => ({
+  const {shoppingItems, addShoppingItem} = useCart(state => ({
     shoppingItems: state.shoppingItems,
     addShoppingItem: state.addShoppingItem,
   }));

@@ -4,7 +4,7 @@ import {RiFacebookCircleFill} from 'react-icons/ri';
 import {useNavigate} from 'react-router-dom';
 import styled from 'styled-components';
 
-import useStoreLogin from '../hooks/useStore_login.js';
+import useLogin from '../hooks/useLoginStore.js';
 
 export default function Login() {
   const [errorMessage, setErrorMessage] = useState('');
@@ -13,7 +13,7 @@ export default function Login() {
     password: '',
   });
 
-  const {setToken, setCredentials} = useStoreLogin(state => ({
+  const {setToken, setCredentials} = useLogin(state => ({
     setToken: state.setToken,
     setCredentials: state.setCredentials,
   }));
@@ -62,7 +62,7 @@ export default function Login() {
           Password
           <Input type="password" name="password" value={inputCredentials.password} onChange={handleChange} />
         </Password>
-        {errorMessage && <div style={{color: 'crimson'}}>{errorMessage}</div>}
+        {errorMessage && <ErrMessage>{errorMessage}</ErrMessage>}
         <LoginButton>LOGIN</LoginButton>
         <SignUpTipps>
           Or login Using
@@ -98,7 +98,7 @@ const LoginForm = styled.form`
 `;
 
 const Title = styled.h1`
-  margin: 0 auto;
+  text-align: center;
 `;
 
 const Username = styled.div`
@@ -135,4 +135,8 @@ const SignUpTipps = styled.div`
 const Logos = styled.div`
   margin: 1rem auto;
   font-size: 2rem;
+`;
+
+const ErrMessage = styled.div`
+  color: crimson;
 `;

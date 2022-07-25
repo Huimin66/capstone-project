@@ -10,6 +10,6 @@ const orderStore = set => ({
   },
 });
 
-const useStoreOrder = create(persist(orderStore, {name: 'order'}));
+const useOrder = create(persist(orderStore, {name: 'order'}));
 
-export default useStoreOrder;
+export default useOrder;

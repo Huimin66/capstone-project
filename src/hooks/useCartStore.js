@@ -35,6 +35,6 @@ const shoppingItemsStore = set => ({
   },
 });
 
-const useStoreCart = create(persist(shoppingItemsStore, {name: 'shoppingItems'}));
+const useCart = create(persist(shoppingItemsStore, {name: 'shoppingItems'}));
 
-export default useStoreCart;
+export default useCart;

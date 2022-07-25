@@ -11,7 +11,6 @@ export default function Details({menusdata}) {
   const params = useParams();
 
   const currentMenu = menusdata?.find(menu => String(menu.id) === params.id);
-  let actives = [false, false, false, false, false];
 
   function calculatePeppers(spicinessValue) {
     return [false, false, false, false, false].map((_, index) => spicinessValue > index);
