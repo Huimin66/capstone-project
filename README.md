@@ -1,100 +1,62 @@
-# React App
+# Order your meal
 
-This is a template for a [Create React App](https://create-react-app.dev/) with additional tools.
+I developed this App for my capstone project by neue fische Bootcamp.
+I have been lived and travelled in different contries, there were always times that I was sitting in a restaurant and could not decide what for a dish I should order. Only the name of a dish reveals too little information to let me know what behind this name. Therefor I get the idea to develop a app to help customers in a restaurant to order meals more easily.
 
-- [Tech-Stack](#tech-stack)
-- [Project Setup](#project-setup)
-  - [Set up Vercel](#set-up-vercel)
-- [Getting started](#getting-started)
-- [Test Driven Development](#test-driven-development)
-- [Commands](#commands)
 
-It uses the following tools/libraries:
+## Tech Stack
+<p align="left">
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/javascript-colored.svg" width="36" height="36" alt="JavaScript" /></a>
+<a href="https://reactjs.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/react-colored.svg" width="36" height="36" alt="React" /></a>
+<a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML5" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/html5-colored.svg" width="36" height="36" alt="HTML5" /></a>
+<a href="https://www.w3.org/TR/CSS/#css" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/css3-colored.svg" width="36" height="36" alt="CSS3" /></a>
+</p>
 
-## Tech-Stack
+## Features
 
-- [Storybook](https://storybook.js.org/)
-- [Jest](https://jestjs.io/)
-- [Stylelint](https://stylelint.io/)
-- [Eslint](https://eslint.org/)
-- [Prettier](https://prettier.io/)
+In my app, customers can 
+- login
+- go through the menus
+- and find details of every menu in detail page
+- add menus to shopping cart
+- call the waiter to pay or pay online(through Stripe)
+- checked history orders if they have logged in
 
-## Project Setup
+<p align="center">
+<img src="public/img/" width="20%" height="20%" alt="home-page" />
+<img src="public/img/" width="20%" height="20%" alt="login-page" />
+<img src="public/img/" width="20%" height="20%" alt="menus-page" />
+<img src="public/img/" width="20%" height="20%" alt="cart-page" />
+<img src="public/img/" width="20%" height="20%" alt="orders-page" />
+</p>
 
-This project uses different deployments to make code reviews easier:
+### Login
 
-- Vercel (App Production)
-- Vercel (App Preview)
+Now I have not finished sign up page for customers, login only works with username: admin, password:admin. Login information is stored in MongoDB Atlas.
 
-### Set up Vercel
+<p align="center">
+<img src="public/img/" width="20%" height="20%" alt="login" />
+</p>
 
-Please follow this guide: https://vercel.com/docs/concepts/git
+### payment
 
-## Getting started
+Customers can pay their bill by calling the waiter, or pay online throught Stripe.
+For testing, you can use the following information to finish the payment.
+- email: any email, like abc@123.com
+- card number: 4242424242424242
+- date: any date that later than today, like 12/23
+- CVC: any three numbers, like 123
 
-**Run the development server:**
+<p align="center">
+<img src="public/img/" width="20%" height="20%" alt="login" />
+</p>
 
-```shell
-npm run start
-```
 
-**Run storybook:**
+## Plans for the future
+- Finish sign up for users
+- Comments in detail page can ben edited, also fotos can be uploaded
+- Store all informatio in MongoDB Atlas
 
-```shell
-npm run storybook
-```
 
-## Test Driven Development
 
-We jest to write unit tests. Please look at the Documentation for [Jest](https://jestjs.io/)
-and [testing-library](https://testing-library.com/docs/react-testing-library/intro/).
 
-## Commands
-
-**Run the development server:**
-
-```shell
-npm run dev
-```
-
-**Build:**
-
-```shell
-npm run build
-```
-
-**Run storybook:**
-
-```shell
-npm run storybook
-```
-
-**Build storybook:**
-
-```shell
-npm run storybook:build
-```
-
-**Run all tests:**
-
-```shell
-npm run test
-```
-
-**Run stylelint**
-
-```shell
-npm run stylelint
-```
-
-**Run eslint**
-
-```shell
-npm run eslint
-```
-
-**Run all linters**
-
-```shell
-npm run lint
-```
