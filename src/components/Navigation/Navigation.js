@@ -57,7 +57,6 @@ const Nav = styled.nav`
   width: 100%;
   position: fixed;
   bottom: 0;
-  margin: auto;
   margin: 0 auto;
   font-size: 1.6rem;
 `;
