@@ -148,7 +148,6 @@ const SpeechBubble = styled.div`
   font-size: 1.2rem;
   background-color: white;
   color: var(--third-color);
-  font-weight: 700;
   &::after {
     color: white;
     content: '';
@@ -160,6 +159,8 @@ const SpeechBubble = styled.div`
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
   }
+
+  font-family: Arial, Helvetica, sans-serif;
 `;
 
 const Payments = styled.div`

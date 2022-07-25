@@ -47,6 +47,7 @@ export default styled.createGlobalStyle`
   input,
   textarea {
     font: inherit;
+    border: none;
   }
 
   ul li {
