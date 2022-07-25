@@ -14,7 +14,7 @@ const HeaderContainer = styled.div`
   position: fixed;
   height: 3.5rem;
   top: 0;
-  left: 0;
+  margin: auto;
   font-size: 2rem;
   font-family: Arial Black, sans-serif;
   color: var(--secondary-color);

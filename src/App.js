@@ -23,6 +23,7 @@ function App() {
       <Route path="/order" element={<Orders />} />
       <Route path="/home" element={<Home />} />
       <Route path="/login" element={login.token ? <Menus menusdata={menusdata} /> : <Login />} />
+      <Route path="*" element={<Home />} />
     </Routes>
   );
 }

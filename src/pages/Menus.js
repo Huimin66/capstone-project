@@ -15,7 +15,7 @@ export default function Menus({menusdata}) {
   }
 
   return (
-    <>
+    <Page>
       <Header />
       <Main>
         <Categories
@@ -26,9 +26,16 @@ export default function Menus({menusdata}) {
         <ShowMenus menus={menus} currentClickedCategory={currentClickedCategory} />
       </Main>
       <Navigation />
-    </>
+    </Page>
   );
 }
+
+const Page = styled.div`
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+  overflow-y: scroll;
+`;
 
 const Main = styled.main`
   display: flex;
