@@ -36,7 +36,7 @@ export default function AddToCart({currentMenu}) {
     <AddToCartContainer>
       <Span>{currentMenu.price}€</Span>
       <Button onClick={() => handleAddToCart(currentMenu)}>ADD TO CART</Button>
-      <ToastContainer />
+      <ToastContainer toastStyle={{color: 'var(--secondary-color)'}} />
     </AddToCartContainer>
   );
 }

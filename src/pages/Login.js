@@ -65,7 +65,7 @@ export default function Login() {
         {errorMessage && <div style={{color: 'crimson'}}>{errorMessage}</div>}
         <LoginButton>LOGIN</LoginButton>
         <SignUpTipps>
-          Or sign up Using
+          Or login Using
           <Logos>
             <RiFacebookCircleFill style={{color: '#395598'}} />
             <AiFillTwitterCircle style={{color: '#1a9fee'}} />

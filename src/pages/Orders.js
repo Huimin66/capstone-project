@@ -20,7 +20,7 @@ export default function Orders() {
   }
 
   return (
-    <>
+    <Page>
       <Header />
       {login.token ? (
         <UserComponent>
@@ -70,9 +70,16 @@ export default function Orders() {
       </OrdersContainer>
 
       <Navigation />
-    </>
+    </Page>
   );
 }
+
+const Page = styled.div`
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+  overflow-y: scroll;
+`;
 
 const OrderDes = styled.div`
   padding: 0.5rem;

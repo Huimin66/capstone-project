@@ -9,7 +9,8 @@ import Navigation from '../components/Navigation/Navigation';
 
 export default function Details({menusdata}) {
   const params = useParams();
-  const currentMenu = menusdata?.find(menu => menu.id === params.id);
+
+  const currentMenu = menusdata?.find(menu => String(menu.id) === params.id);
   let actives = [false, false, false, false, false];
 
   function setActive() {
@@ -22,7 +23,7 @@ export default function Details({menusdata}) {
   setActive();
 
   return (
-    <>
+    <Page>
       <Header />
       <DetailPage>
         <BackAndTitle>
@@ -69,9 +70,16 @@ export default function Details({menusdata}) {
         )}
       </DetailPage>
       <Navigation />
-    </>
+    </Page>
   );
 }
+
+const Page = styled.div`
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+  overflow-y: scroll;
+`;
 
 const DetailPage = styled.main`
   max-width: 600px;
