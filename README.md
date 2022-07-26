@@ -47,9 +47,9 @@ Now I have not finished sign up page for customers, login only works with userna
 Customers can pay their bill by calling the waiter, or pay online throught Stripe.
 For testing, you can use the following information to finish the payment.
 
-- email: any email, like abc@123.com
-- card number: 4242424242424242
-- date: any date that later than today, like 12/23
+- E-mail: any email, like abc@123.com
+- Card number: 4242424242424242
+- Date: any date that later than today, like 12/23
 - CVC: any three numbers, like 123
 
 <p align="center">
