@@ -59,5 +59,6 @@ For testing, you can use the following information to finish the payment.
 ## Plans for the future
 
 - Finish sign up for users
-- Comments in detail page can ben edited, also fotos can be uploaded
+- Sign up with facebook,twitter and google
+- Comments in detail page can be edited, also fotos can be uploaded
 - Store all informatio in MongoDB Atlas
