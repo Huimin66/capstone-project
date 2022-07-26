@@ -2,15 +2,15 @@ import styled, {css} from 'styled-components';
 
 import Header from '../components/Header/Header.js';
 import Navigation from '../components/Navigation/Navigation';
-import useStoreLogin from '../hooks/useStore_login';
-import useStoreOrder from '../hooks/useStore_order';
+import useLogin from '../hooks/useLoginStore';
+import useOrder from '../hooks/useOrderStore';
 
 export default function Orders() {
-  const {orders} = useStoreOrder(state => ({
+  const {orders} = useOrder(state => ({
     orders: state.orders,
   }));
 
-  const {login, setToken} = useStoreLogin(state => ({
+  const {login, setToken} = useLogin(state => ({
     login: state.login,
     setToken: state.setToken,
   }));
@@ -177,12 +177,12 @@ const Greet = styled.span`
   gap: 0.5rem;
 `;
 
-const SpeechBubbleTipps = styled.div`
+const SpeechBubbleTipps = styled.p`
   ${SpeechBubble}
   margin: 6rem auto;
 `;
 
-const SpeechBubbleNologin = styled.div`
+const SpeechBubbleNologin = styled.p`
   ${SpeechBubble}
   font-family: Arial, Helvetica,sans-serif;
   font-weight: 500;

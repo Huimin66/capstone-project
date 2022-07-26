@@ -19,6 +19,6 @@ const loginStore = set => ({
   },
 });
 
-const useStoreLogin = create(persist(loginStore, {name: 'login'}));
+const useLogin = create(persist(loginStore, {name: 'login'}));
 
-export default useStoreLogin;
+export default useLogin;

@@ -6,10 +6,10 @@ import {BiMinus, BiPlus} from 'react-icons/bi';
 import {ToastContainer, toast} from 'react-toastify';
 import styled from 'styled-components';
 
-import useStoreCart from '../../hooks/useStore_cart';
+import useCart from '../../hooks/useCartStore';
 
 export default function ShoppingItems({shoppingItems}) {
-  const {removeShoppingItem, decreaseItemQuantity, increaseItemQuantity} = useStoreCart(state => ({
+  const {removeShoppingItem, decreaseItemQuantity, increaseItemQuantity} = useCart(state => ({
     removeShoppingItem: state.removeShoppingItem,
     decreaseItemQuantity: state.decreaseItemQuantity,
     increaseItemQuantity: state.increaseItemQuantity,
