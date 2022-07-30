@@ -28,7 +28,6 @@ export default styled.createGlobalStyle`
     background-image: url(https://res.cloudinary.com/ddbcljw3g/image/upload/v1657100856/dateil-background_w5a4yd.jpg);
     background-size: contain;
     border: none;
-    overflow: hidden;
   }
 
   ul,

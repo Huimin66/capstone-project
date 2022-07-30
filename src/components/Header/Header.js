@@ -26,4 +26,5 @@ const HeaderContainer = styled.div`
   border-bottom: 1px solid #f7f7f7;
   background-color: #d2ddd9;
   text-shadow: 0.1em 0.1em #c0c0c0;
+  z-index:1;
 `;
