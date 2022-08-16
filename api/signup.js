@@ -23,7 +23,6 @@ export default async function loginHandler(request, response) {
       password: await bcrypt.hash(request.body.password, saltRounds),
     });
 
-    console.log('Save User');
     newUser.save();
 
     const token = createToken(newUser);
