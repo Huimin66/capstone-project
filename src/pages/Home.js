@@ -6,10 +6,6 @@ import Navigation from '../components/Navigation/Navigation.js';
 export default function Home() {
   const navigate = useNavigate();
 
-  // function handleLogin() {
-  //   navigate('/login');
-  // }
-
   function handleSignUp() {
     navigate('/signup');
   }

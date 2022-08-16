@@ -37,8 +37,10 @@ export default function Login() {
         }
 
         setToken(data);
-        //Set the credentials that 
-        setCredentials(event.target.elements.username.value, event.target.elements.password.value);
+        setCredentials(
+          event.target.elements.username.value,
+          event.target.elements.password.value
+        );
         navigate('/menus');
       })
       .catch(error => {
@@ -57,11 +59,21 @@ export default function Login() {
         <Title>Login</Title>
         <Username>
           Username
-          <Input type="text" name="username" value={inputCredentials.username} onChange={handleChange} />
+          <Input
+            type="text"
+            name="username"
+            value={inputCredentials.username}
+            onChange={handleChange}
+          />
         </Username>
         <Password>
           Password
-          <Input type="password" name="password" value={inputCredentials.password} onChange={handleChange} />
+          <Input
+            type="password"
+            name="password"
+            value={inputCredentials.password}
+            onChange={handleChange}
+          />
         </Password>
         {errorMessage && <ErrMessage>{errorMessage}</ErrMessage>}
         <LoginButton>LOGIN</LoginButton>
