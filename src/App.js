@@ -8,6 +8,7 @@ import Login from './pages/Login';
 import Menus from './pages/Menus.js';
 import Orders from './pages/Orders.js';
 import ShoppingCart from './pages/ShoppingCart.js';
+import SignUp from './pages/SignUp.js';
 
 function App() {
   const {login} = useLogin(state => ({
@@ -23,6 +24,7 @@ function App() {
       <Route path="/order" element={<Orders />} />
       <Route path="/home" element={<Home />} />
       <Route path="/login" element={login.token ? <Menus menusdata={menusdata} /> : <Login />} />
+      <Route path="/signup" element={login.token ? <Menus menusdata={menusdata} /> : <SignUp />} />
       <Route path="*" element={<Home />} />
     </Routes>
   );

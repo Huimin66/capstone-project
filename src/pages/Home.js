@@ -6,15 +6,15 @@ import Navigation from '../components/Navigation/Navigation.js';
 export default function Home() {
   const navigate = useNavigate();
 
-  function handleLogin() {
-    navigate('/login');
+  function handleSignUp() {
+    navigate('/signup');
   }
 
   return (
     <>
       <HomeContainer>
         <H1>Welcome to Joyfeel Wok!</H1>
-        <LoginButton onClick={handleLogin}>Login</LoginButton>
+        <SignUpButton onClick={handleSignUp}>Sign Up</SignUpButton>
         <GoMenu
           onClick={() => {
             navigate('/menus');
@@ -65,7 +65,7 @@ const Button = css`
   font-weight: 700;
 `;
 
-const LoginButton = styled.button`
+const SignUpButton = styled.button`
   ${Button}
   bottom: 10rem;
   color: var(--secondary-color);

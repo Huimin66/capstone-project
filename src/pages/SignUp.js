@@ -1,16 +1,17 @@
 import {useState} from 'react';
 import {AiFillTwitterCircle, AiFillGoogleCircle} from 'react-icons/ai';
 import {RiFacebookCircleFill} from 'react-icons/ri';
-import {useNavigate} from 'react-router-dom';
-import styled from 'styled-components';
+import {Link, useNavigate} from 'react-router-dom';
+import styled, {css} from 'styled-components';
 
 import useLogin from '../hooks/useLoginStore.js';
 
-export default function Login() {
+export default function SignUp() {
   const [errorMessage, setErrorMessage] = useState('');
   const [inputCredentials, setInputCredentials] = useState({
     username: '',
     password: '',
+    email: '',
   });
 
   const {setToken, setCredentials} = useLogin(state => ({
@@ -22,7 +23,7 @@ export default function Login() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    fetch('/api/login', {
+    fetch('/api/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -32,6 +33,7 @@ export default function Login() {
       .then(async response => {
         const data = await response.json();
         if (!response.ok) {
+          console.log(data)
           setErrorMessage(data);
           return new Error('Data could not be fetched!');
         }
@@ -54,9 +56,18 @@ export default function Login() {
   }
 
   return (
-    <LoginPage>
-      <LoginForm onSubmit={handleSubmit}>
-        <Title>Login</Title>
+    <SignUpPage>
+      <SignUpForm onSubmit={handleSubmit}>
+        <Title>Sign Up</Title>
+        <Email>
+          Email
+          <Input
+            type="text"
+            name="email"
+            value={inputCredentials.email}
+            onChange={handleChange}
+          />
+        </Email>
         <Username>
           Username
           <Input
@@ -75,22 +86,25 @@ export default function Login() {
             onChange={handleChange}
           />
         </Password>
-        {errorMessage && <ErrMessage>{errorMessage}</ErrMessage>}
-        <LoginButton>LOGIN</LoginButton>
+        {/* {errorMessage && <ErrMessage>{errorMessage}</ErrMessage>} */}
+        <SignUpButton>Sign Up</SignUpButton>
         <SignUpTipps>
-          Or login Using
+          Or Sign Up Using
           <Logos>
             <RiFacebookCircleFill style={{color: '#395598'}} />
             <AiFillTwitterCircle style={{color: '#1a9fee'}} />
             <AiFillGoogleCircle style={{color: '#ec4239'}} />
           </Logos>
+          <GoToLogin>
+            Already have an account? <Link to={'/login'}>Sign in</Link>
+          </GoToLogin>
         </SignUpTipps>
-      </LoginForm>
-    </LoginPage>
+      </SignUpForm>
+    </SignUpPage>
   );
 }
 
-const LoginPage = styled.div`
+const SignUpPage = styled.div`
   width: 100%;
   height: 100vh;
   border-top: 1px solid var(--primary-light-color);
@@ -98,9 +112,9 @@ const LoginPage = styled.div`
   justify-content: center;
   padding-top: 2.5rem;
 `;
-const LoginForm = styled.form`
+const SignUpForm = styled.form`
   width: 80%;
-  height: 70%;
+  height: 80%;
   margin: 3rem;
   display: flex;
   flex-direction: column;
@@ -114,16 +128,22 @@ const Title = styled.h1`
   text-align: center;
 `;
 
-const Username = styled.div`
+const SharedDiv = css`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 `;
 
+const Username = styled.div`
+  ${SharedDiv}
+`;
+
+const Email = styled.div`
+  ${SharedDiv}
+`;
+
 const Password = styled.span`
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  ${SharedDiv}
 `;
 
 const Input = styled.input`
@@ -133,8 +153,8 @@ const Input = styled.input`
   }
 `;
 
-const LoginButton = styled.button`
-  margin-top: 2rem;
+const SignUpButton = styled.button`
+  margin-top: 1rem;
   padding: 0.5rem;
   border-radius: 20px;
   background: #18453b;
@@ -142,7 +162,9 @@ const LoginButton = styled.button`
 `;
 
 const SignUpTipps = styled.div`
-  margin: 1rem auto;
+  text-align: center;
+  width: 1rem 100%;
+  margin: 0 auto;
 `;
 
 const Logos = styled.div`
@@ -152,4 +174,8 @@ const Logos = styled.div`
 
 const ErrMessage = styled.div`
   color: crimson;
+`;
+
+const GoToLogin = styled.div`
+  font-size: 0.9rem;
 `;
