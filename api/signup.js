@@ -18,15 +18,15 @@ export default async function loginHandler(request, response) {
 
   if (!user) {
     var newUser = new User({
-      email: req.body.email,
-      username: req.body.username,
-      password: bcrypt.hash(req.body.password, saltRounds),
+      email: request.body.email,
+      username: request.body.username,
+      password: await bcrypt.hash(request.body.password, saltRounds),
     });
 
     console.log('Save User');
     newUser.save();
 
-    const token = createToken(user);
+    const token = createToken(newUser);
     return response.status(200).json(token);
   } else {
     return response.status(400).json('Username already exists!');

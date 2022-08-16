@@ -11,6 +11,7 @@ export default function SignUp() {
   const [inputCredentials, setInputCredentials] = useState({
     username: '',
     password: '',
+    email: '',
   });
 
   const {setToken, setCredentials} = useLogin(state => ({
@@ -32,6 +33,7 @@ export default function SignUp() {
       .then(async response => {
         const data = await response.json();
         if (!response.ok) {
+          console.log(data)
           setErrorMessage(data);
           return new Error('Data could not be fetched!');
         }
@@ -84,7 +86,7 @@ export default function SignUp() {
             onChange={handleChange}
           />
         </Password>
-        {errorMessage && <ErrMessage>{errorMessage}</ErrMessage>}
+        {/* {errorMessage && <ErrMessage>{errorMessage}</ErrMessage>} */}
         <SignUpButton>Sign Up</SignUpButton>
         <SignUpTipps>
           Or Sign Up Using

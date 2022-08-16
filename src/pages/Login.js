@@ -37,6 +37,7 @@ export default function Login() {
         }
 
         setToken(data);
+        //Set the credentials that 
         setCredentials(event.target.elements.username.value, event.target.elements.password.value);
         navigate('/menus');
       })
